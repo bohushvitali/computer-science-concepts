@@ -1,1 +1,4 @@
-# computer-science-concepts
+Computer Science Concepts
+-----------------
+
+- GoF Design Patterns
