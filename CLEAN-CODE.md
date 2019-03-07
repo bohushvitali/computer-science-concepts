@@ -1,6 +1,15 @@
+# Clean Code
+
+> References
+- [Clean Code Cheat Sheet ](https://www.planetgeek.ch/wp-content/uploads/2014/11/Clean-Code-V2.4.pdf)
+
 ## Why Clean Code
 
 ## Principles
+
+:red_circle:
+
+:large_blue_circle:
 
 ## Smells
 
