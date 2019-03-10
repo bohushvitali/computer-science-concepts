@@ -1,4 +1,4 @@
-## The Twelve Factors
+# The Twelve Factors
 
 ## Codebase
 One codebase tracked in revision control, many deploys.
