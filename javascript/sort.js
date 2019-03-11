@@ -32,20 +32,6 @@ const quickSort = arr => {
     .concat(quickSort(right));
 };
 
-/*
-// Start with an unsorted array
-[95, 93, 36, 74, 33]
-
-// Place them in the appropriate buckets for the least significant digit
-{3: [93, 33], 4: [74], 5: [95], 6: [36]}
-// And extract them back into an array
-[93, 33, 74, 95, 36]
-
-// Repeat for the next significant digit
-{3: [33, 36], 4: [43], 7: [74], 9: [93, 95]}
-// And we're Sorted!
-[33, 36, 43, 74, 93, 95]
- */
 const radixSort = arr => {
   const maxNum = Math.max(...arr) * 10;
   let divisor = 10;
