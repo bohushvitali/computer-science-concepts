@@ -1,6 +1,6 @@
 'use strict';
 
-class Contextt {
+class Context {
   constructor(state) {
     switch (state) {
       case "A":
@@ -50,7 +50,7 @@ class ConcreteStateB extends State {
 }
 
 function run() {
-  let context = new Contextt("A")
+  let context = new Context("A")
   context.Request()
 }
 

@@ -21,9 +21,8 @@ The architecture defines the parts of a system that are hard and costly to
 change. Therefore we are in need of a clean, simple, flexible, evolvable, and
 agile architecture to be able to keep up with all the changes surrounding us.
 
-
 ## Clean architecture
-An architecture that allows to replace details and is easy to verify.
+- An architecture that allows to replace details and is easy to verify.
 
 The Clean Architecture
 ![Uncle Bob’s clean Architecture](https://cdn-images-1.medium.com/max/1400/1*D1EvAeK74Gry46JMZM4oOQ.png)
@@ -511,3 +510,82 @@ This principle states that “High-level modules should not depend on low-level 
 
 ### Passing data between boundaries.
 You should always pay attention to objects being passed between layers. An object being passed should be isolated, simple or even just a plain data type without hidden dependencies. You can encounter problems when you are using ORM (Object Relational Mapping) libraries and passing ORM objects outside the boundaries. For example NSManagedObject.
+
+## Fallacies of distributed computing
+### The network is reliable.
+- Software applications are written with little error-handling on networking errors. During a network outage, such applications may stall or infinitely wait for an answer packet, permanently consuming memory or other resources. When the failed network becomes available, those applications may also fail to retry any stalled operations or require a (manual) restart.
+
+### Latency is zero.
+- Ignorance of network latency, and of the packet loss it can cause, induces application- and transport-layer developers to allow unbounded traffic, greatly increasing dropped packets and wasting bandwidth.
+
+### Bandwidth is infinite.
+- Ignorance of bandwidth limits on the part of traffic senders can result in bottlenecks.
+
+### The network is secure.
+- Complacency regarding network security results in being blindsided by malicious users and programs that continually adapt to security measures.[2]
+
+### Topology doesn't change.
+- Changes in network topology can have effects on both bandwidth and latency issues, and therefore can have similar problems.
+
+### There is one administrator.
+- Multiple administrators, as with subnets for rival companies, may institute conflicting policies of which senders of network traffic must be aware in order to complete their desired paths.
+
+### Transport cost is zero.
+- The "hidden" costs of building and maintaining a network or subnet are non-negligible and must consequently be noted in budgets to avoid vast shortfalls.
+
+### The network is homogeneous.
+- If a system assumes a homogeneous network, then it can lead to the same problems that result from the first three fallacies.
+
+## CAP theorem
+### Consistency
+- Every read receives the most recent write or an error.
+
+### Availability
+- Every request receives a (non-error) response – without the guarantee that it contains the most recent write.
+
+### Partition tolerance
+- The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
+
+## Benefits of Serverless Architecture
+### Lower costs and scalability.
+### Faster development and deployment.
+### Reduced expenses on human resources.
+### High availability and auto-scaling.
+### Focus on business needs.
+
+## The Twelve Factors
+### Codebase
+One codebase tracked in revision control, many deploys.
+
+### Dependencies
+Explicitly declare and isolate dependencies.
+
+### Config
+Store config in the environment.
+
+### Backing services
+Treat backing services as attached resources.
+
+### Build, release, run
+Strictly separate build and run stages.
+
+### Processes
+Execute the app as one or more stateless processes.
+
+### Port binding
+Export services via port binding.
+
+### Concurrency
+Scale out via the process model.
+
+### Disposability
+Maximize robustness with fast startup and graceful shutdown.
+
+### Dev/prod parity
+Keep development, staging, and production as similar as possible.
+
+### Logs
+Treat logs as event streams.
+
+### Admin processes
+Run admin/management tasks as one-off processes.

@@ -1,33 +1,7 @@
-## OAuth 2.0
-- open standard for access delegation
-- authorization protocol that gives an API client limited access to user data on a web server
-- auth provider & auth client
-- request tocken & access tocken
+### OAuth 2.0
 
-## Structured and Unstructured data
+Authorization protocol that gives an API client limited access to user data on a web server.
 
-## Decision
+### AJAX
 
-## Apache Spark
-
-## Resilient Distrubuted Datased
-
-## Lazy Execution
-
-## Infrastructure as a Code
-
-## Sharding
-
-## Apache Kafka
-
-## JWT - JSON Web Token
-
-##
-
-##
-
-##
-
-##
-
-##
+Asynchronous JavaScript and XML (known as AJAX) is a term that describes a new approach to using multiple technologies together in order to enable web applications to make quick updates to the user interface without reloading the entire browser page.
