@@ -1,0 +1,857 @@
+- Clean Architecture
+  - Why is a clean, simple, flexible, evolvable, and agile architecture important?
+    - Software architecture is the high level structure of a software system, the discipline of creating such structures, and the documentation of these structures.
+    - It is the set of structures needed to reason about the software system, and comprises the software elements, the relations between them, and the properties of both elements and relations.
+    - In today’s software development world, requirements change, environments change, team members change, technologies change, and so should the architecture of our systems.
+    - The architecture defines the parts of a system that are hard and costly to change. Therefore we are in need of a clean, simple, flexible, evolvable, and agile architecture to be able to keep up with all the changes surrounding us.
+  - Clean architecture
+    - An architecture that allows to replace details and is easy to verify.
+    - Entities: Entities encapsulate enterprise-wide business rules. An entity can be an object with methods, or it can be a set of data structures and functions.
+    - Use cases: Use cases orchestrate the flow of data to and from the entities, and direct those entities to use their enterprise-wide business rules to achieve the goals of the use cases.
+    - Interface adapters: Adapters that convert data from the format most convenient for the use cases and entities, to the format most convenient for some external agency such as a database or the Web.
+    - Frameworks and drivers: Glue code to connect UI, databases, devices etc. to the inner circles.
+    - Program Flow: Starts on the outside and ends on the outside, but can go through several layers (user clicks a button, use case loads some entities from DB, entities decide something that is presented on the UI).
+  - Dependency management
+    - The concentric circles represent different areas of software. In general, the further in you go, the higher level the software becomes. The outer circles are mechanisms. The inner circles are policies.
+    - Source code dependencies can only point inwards. Nothing in an inner circle can know anything at all about something in an outer circle. Use dependency inversion to build up the system (classes in an outer circle implement interfaces of an inner circle or listen to events from inner circles).
+  - Independent of Frameworks
+    - The architecture does not depend on the existence of some library of feature-laden software. This allows you to use such frameworks as tools, rather than having to cram your system into their technical constraints.
+  - Testable
+    - The business rules and use cases can be tested without UI, database, Web server, or any other external element.
+  - Independent of system boundaries (UI, database, …)
+    - The UI, database, or any other external element can easily change without any impact on use cases and business rules.
+  - Simple architecture
+    - An architecture that is easy to understand. Simplicity is, however, subjective.
+    - Consistent design decisions
+      - One problem has one solution. Similar problems are solved similarly.
+    - Number of concepts/technologies
+      - Simple solutions make use of only a few different concepts and technologies.
+    - Number of interactions
+      - The less interactions the simpler the design.
+      - A reasonable amount of components with only efferent coupling and most of the others with preferably only afferent coupling.
+    - Size
+      - Small systems/components are easier to grasp than big ones. Build large systems out of small parts.
+    - Modularity
+      - Build your system by connecting independent modules with a clearly defined interface (e.g. with adapters).
+  - Flexible architecture
+    - An architecture that supports change.
+    - Separation of concerns
+      - Divide your system into distinct features with as little overlap in functionality as possible so that they can be combined freely
+    - Software reflects user’s mental model
+      - When the structure and interactions inside the software match the user’s mental model, changes in the real world can more easily be applied in software.
+    - Abstraction
+      - Separating ideas from specific implementations provides the flexibility to change the implementation. But beware of `over abstraction`.
+    - Interface slimness
+      - Fat interfaces between components lead to strong coupling. Design the interfaces to be as slim as possible. But beware of `ambiguous interfaces`.
+    - Prefer composition over inheritance
+      - Inheritance increases coupling between parent and child, thereby limiting reuse.
+    - Tangle-/cycle-free dependencies
+      - The dependency graph of the elements of the architecture has no cycles, thus allowing locally bounded changes.
+  - Evolvable architecture
+    - An architecture that is easy to adapt step by step to keep up with changes.
+    - Matches current needs, not the future
+      - The architecture of the current system should match the current needs (functional and non-functional) – not some future ones. This results in simpler, easier to understand solutions. Otherwise, the risk of waste is very high.
+    - No dead-ends, architecture can be extended/adapted
+      - The current architecture should be extendable and adaptable so that future needs can be addressed. When evaluating different alternatives, choose one that is open for change.
+    - Architecture agnostic components
+      - When components don’t care about which architecture they run in, the architecture can be changed without having to rewrite the components.
+    - Sacrificial architecture
+      - When the software has outlived its architecture, throw the architecture away and start over. This mindset can be used to build a first version with a very simple architecture, then start over for the next.
+    - Rolling refactoring
+      - When a new version of a concept is introduced, then the old one is refactored out step by step. There can be at most two versions of a concept in an application (and it should be temporary).
+    - Agile architecture
+      - An architecture that supports agile software development by enabling the principles of the Agile Manifesto
+  - Workflow
+    - Use a top-down approach to find the architecture.
+    - Context
+      - What belongs to your system and what does not? Which external services will you use?
+    - Break down into parts
+      - Split the whole into parts by applying separation of concerns and the singleresponsibility principle.
+    - Communication
+      - Which data flows through which call, message or event from one part to another? What are the properties of the channels (sync/async, reliability, …)
+    - Repeat for each part
+      - Repeat the above-mentioned three steps for each part as if it were your system.
+      - A part is a bounded context, subsystem or component.
+  - Defer decisions
+    - Decide only things you have enough knowledge about. Otherwise find a way to defer the decision and build up more knowledge. A good architecture allows you to defer most decisions.
+    - Abstraction
+      - Use an abstraction to hide details so that you don’t have to decide about the details, but can use a simulation/fake at first to build up more knowledge.
+    - Simplification
+      - Simplify the problem so that a decision can be made and work can progress. Use this to break free from a blocking state, but be aware of the risks a wrong decision could have.
+    - Wilful ignorance
+      - Refuse to decide and wait until more knowledge about the problem and its potential solutions is built up
+    - Decision delegation
+      - Build the (part of a) system in a way that doesn’t require any decision, by making some other (part of the) system responsible that can be implemented later. E.g. instead of deciding how to persist data, make the code calling your code responsible for passing all needed data to your code.
+      - This allows you to build your whole business logic and decide about persistence when implementing the host that runs the business logic.
+  - Architecture influencing forces
+    - Quality attributes
+      - The needed quality attributes (functionality, reliability, usability, efficiency, maintainability, portability, …) are the primary drivers for architectural decisions.
+    - Team know-how and skills
+      - The whole team understands and supports architecture and can make design decisions according to the architecture.
+    - Easiness of implementation
+      - How easy an envisioned architecture can be implemented is a quality attribute.
+    - Cost of operations
+      - Most costs of a software system accrue during operations, not implementation.
+    - Risks
+      - Every technology, library, and design decision has its risks.
+    - Inherent opportunities
+      - Things the architecture would allow us to do (but without investing any additional effort because we may never need it).
+    - Technology churn
+      - Availability of new (better) technologies, resulting in a need for architecture change.
+    - Trade-offs
+      - Designing an architecture comprises making trade-offs between conflicting goals. Trade-offs must reflect the priorities of quality attributes set by the stakeholders. Trade-offs should be documented and communicated to all stakeholders.
+  - Architecture degrading forces
+    - Architectural drift
+      - Introduction of design decisions into a system’s actual architecture that are not included in, encompassed by, or implied by the planned architecture.
+    - Architectural erosion
+      - Introduction of design decisions into a system’s actual architecture that violate its planned architecture.
+  - Architecture killers
+    - Split brain
+      - Different parts of the system claim ownership of the same data or their interpretation resulting in inconsistencies and difficult synchronisation.
+    - Coupling in space and time
+      - E.g. shared code to remove duplication hinders independent advancements, a service that needs other services to be up and running, an `initialise` method that has to be called prior to any other method on the class (better use constructor injection or a factory).
+    - Dead-end
+      - A design decision that prevents further adaptability without a major refactoring or rewrite.
+  - Priorities
+    - Simplicity before generality
+      - Concrete implementations are easier to understand than generalised concepts.
+    - Hard-coded before configurable
+      - Configurability leads to if/else constructs or polymorphism inside the code, resulting in more complicated code.
+    - Use before reuse
+      - Don’t design for reuse before the code has never actually been used. This leads to overgeneralisation, inapt interfaces and increased complexity.
+    - Working before optimised
+      - First, make it work, then optimise. Premature optimisation leads to more complex solutions or to local instead of global optimisations.
+    - Quality attributes before functional requirements
+      - Use quality scenarios to guide your architectural decisions because most of the times, quality attributes have more impact than functional requirements.
+    - Combined small systems over building a single big system
+      - Big systems are more complicated to comprehend than a combination of small systems. But beware of complexity hidden in the communication between the systems.
+  - Principles
+    - The teams that code the system, design the system.
+      - Teams themselves are empowered to define, develop, and deliver software, and they are held accountable for the results.
+    - Build the simplest architecture that can possibly work.
+      - Simplicity leads to comprehensibility, changeability, low defect introduction.
+    - When in doubt, code it out.
+      - Get real feedback from running code, then decide.
+    - They build it, they test it.
+      - Testing is an integral part of building software, not an afterthought.
+    - System architecture is a role collaboration.
+      - The whole team participates in architecture decisions.
+    - There is no monopoly on innovation.
+      - Every team member has time to innovate (spikes, hackathons, pet project).
+  - Tips and tricks
+    - Start with concepts, not with technologies.
+      - Don’t think in technologies, think in concepts. Then choose technologies matching the concepts and adapt concepts to technological limitations.
+    - Think about your envisioned architecture, but also lay a way from here to there.
+      - Break your architecture work into steps. Use assumptions and simplifications in early steps. Always make sure that there is a path from the current architecture to the envisioned architecture.
+    - Most of the time, persistence is a secondary thought
+      - You always have some data. But that is no reason to start your design with the database. Business logic and workflows are more important.
+    - Decouple from environment
+      - Design everything so that it has to know nothing about its environment. (+) (-)
+    - Prototypes, proof of concepts, feasibility studies
+      - Break risks and grow knowledge fast, then decide.
+    - Use architecture patterns as inspiration, not as solutions.
+      - Architecture patterns are good examples of solutions to specific problems.
+      - Use them to find solutions for your problems and do not apply them to your problems.
+  - Architectural aspects
+    - Persistence
+      - Form of data (document-based, relational, graph, key-value), backup, transactions, size of data, throughput, replication, availability, concurrency.
+    - Translation (UI and data)
+      - Static (e.g. resources) vs. dynamic, switchable during implementation/installation/start-up/runtime.
+    - Communication between parts
+      - Asynchronous/synchronous, un-/reliable, latency, throughput, availability of connection, method calls/events/messages.
+    - Scaling
+      - Run on multiple threads/processes/machines, availability, consistency, redundancy.
+    - Security
+      - Authentication, authorisation, threats, encryption (of communication and data).
+    - Journaling, auditing
+      - Operations, granularity, access to journal, tampering, regulatory.
+    - Reporting
+      - Access to data (production/dedicated database/data warehouse), delivery mechanism (synchronous/asynchronous), formats (Web, PDF, …).
+    - Data migration, data import
+      - Available time frame for migration/import, data quality, default values for missing values, value merging/splitting.
+    - Releasability
+      - Release as one, per service or per component (e.g. plug-in). Automatic or manual release.
+    - Versioning
+      - One product vs. a product family, technical/marketing version, manually or automatically generated, releases/service packs/hot fixes, SemVer.
+    - Backward compatibility
+      - APIs, data (input/output/persisted), environment (e.g. old OS).
+    - Response times
+      - Service time (actually performing the work) + wait time + transmission time.
+    - Archiving data
+      - Data growth rate, access to archived data, split relations in relational data.
+    - Distribution
+      - Beware of the fallacies of distributed computing: the network is reliable, latency is zero, bandwidth is infinite, the network is secure, topology doesn’t change, there is one administrator, transport cost is zero, the network is homogeneous.
+    - Public interfaces
+      - Versioning, immutability and stability of contracts and schemas.
+    - Documentation
+    - Questions to ask yourself
+      - Who is the consumer? What do they need? How do you deliver the documentation to them? How do you know when they are ready for it? How do you produce it? What input do you need to produce it?
+      - Manual and automatic production
+        - Manual: someone writes the documentation, high risk of being out-of-date, very flexible.
+      - Automatic: generated from code, can be regenerated anytime and is therefore never out of date, finding right level of abstraction is hard. Works good for state machines, bootstrapping mechanics, and structural breakdown.
+      - About now, not the future
+        - Only document what you did, not what you want to do.
+      - Shared
+        - The whole team participates in producing the documentation.
+- Architecture smells
+    - Causes: applying a design solution in an inappropriate context, mixing design fragments that have undesirable emergent behaviours.
+    - Overlayered architecture
+      - When there are layers on layers on layers on layers ... in your application.
+      - Not providing abstraction, lots of boilerplate code.
+    - Overabstraction
+      - Too abstract to be understandable. Concrete designs are easier to understand.
+    - Overconfigurability
+      - Everything is configurable because no decisions were made how the software should behave.
+    - Overkill Architecture
+      - A simple problem with a complex (however technically interesting) solution.
+    - Futuristic Architecture
+      - The architecture wants to anticipate a lot of future possible changes. This adds complexity and most likely also waste.
+    - Technology enthusiastic Architecture
+      - Lots of new cool technology is introduced just for the sake of it.
+    - Paper tiger architecture
+      - The architecture exists only on paper (UML diagrams) with no connection to the reality.
+    - Connector envy
+      - A component doing the job that should be delegated to a connector: communication (transfer of data), coordination (transfer of control), conversion (bridge different data formats, types, protocols), and facilitation (load-balancing, monitoring, fault tolerance).
+    - Scattered parasitic functionality
+      - A single concern is scattered across multiple components and at least one component addresses multiple orthogonal concerns.
+    - Ambiguous interfaces
+      - Ambiguous interfaces are interfaces that offer only a single general entry point into a component (e.g. pass an object, or general purpose events over an event bus). They are not explorable.
+    - Extraneous adjacent connector
+      - Two connectors of different types are used to link a pair of components.
+      - E.g. event (asynchronous) and service call (synchronous).
+        - Event: loosely coupled -> availability, replicability.
+        - Method call: easy to understand.
+        - Both: neither.
+  - Clean Architecture
+    - Independence from Frameworks.
+      - An architecture should not depend on frameworks, you should be able to swap a framework with the least effort.
+    - Independence from Details (UI, DB, transport protocol).
+      - A software system’s core logic should not be affected by changes in UI, Databases, Frameworks, Libraries, etc.
+    - The Dependency Rule.
+      - An inner layer should not know anything about upper/outer layers. As a result dependencies can only point inwards.
+    - Entities and Use Cases.
+      - Entities and use cases are the core of an application. And these layers should not be affected by changes in “detail layers”.
+    - The necessity of using adapters and converters.
+      - Adapters and converters are used to convert models when they are propagating between layers to make them convenient to work with on a specific layer and do not spread extra dependencies to other layers.
+    - The Dependency Inversion Principle
+      - This principle states that “High-level modules should not depend on low-level modules. Both should depend on abstractions” and “Abstractions should not depend on details. Details should depend on abstractions”.
+    - Passing data between boundaries.
+      - You should always pay attention to objects being passed between layers. An object being passed should be isolated, simple or even just a plain data type without hidden dependencies. You can encounter problems when you are using ORM (Object Relational Mapping) libraries and passing ORM objects outside the boundaries. For example NSManagedObject.
+  - Fallacies of distributed computing
+    - The network is reliable.
+      - Software applications are written with little error-handling on networking errors. During a network outage, such applications may stall or infinitely wait for an answer packet, permanently consuming memory or other resources. When the failed network becomes available, those applications may also fail to retry any stalled operations or require a (manual) restart.
+    - Latency is zero.
+      - Ignorance of network latency, and of the packet loss it can cause, induces application- and transport-layer developers to allow unbounded traffic, greatly increasing dropped packets and wasting bandwidth.
+    - Bandwidth is infinite.
+      - Ignorance of bandwidth limits on the part of traffic senders can result in bottlenecks.
+    - The network is secure.
+      - Complacency regarding network security results in being blindsided by malicious users and programs that continually adapt to security measures.[2]
+    - Topology doesn't change.
+      - Changes in network topology can have effects on both bandwidth and latency issues, and therefore can have similar problems.
+    - There is one administrator.
+      - Multiple administrators, as with subnets for rival companies, may institute conflicting policies of which senders of network traffic must be aware in order to complete their desired paths.
+    - Transport cost is zero.
+      - The "hidden" costs of building and maintaining a network or subnet are non-negligible and must consequently be noted in budgets to avoid vast shortfalls.
+    - The network is homogeneous.
+      - If a system assumes a homogeneous network, then it can lead to the same problems that result from the first three fallacies.
+  - CAP theorem
+    - Consistency
+      - Every read receives the most recent write or an error.
+    - Availability
+      - Every request receives a (non-error) response – without the guarantee that it contains the most recent write.
+    - Partition tolerance
+      - The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
+  - Benefits of Serverless Architecture
+    - Lower costs and scalability.
+    - Faster development and deployment.
+    - Reduced expenses on human resources.
+    - High availability and auto-scaling.
+    - Focus on business needs.
+  - The Twelve Factors
+    - Codebase
+      - One codebase tracked in revision control, many deploys.
+    - Dependencies
+      - Explicitly declare and isolate dependencies.
+    - Config
+      - Store config in the environment.
+    - Backing services
+      - Treat backing services as attached resources.
+    - Build, release, run
+      - Strictly separate build and run stages.
+    - Processes
+      - Execute the app as one or more stateless processes.
+    - Port binding
+      - Export services via port binding.
+    - Concurrency
+      - Scale out via the process model.
+    - Disposability
+      - Maximize robustness with fast startup and graceful shutdown.
+    - Dev/prod parity
+      - Keep development, staging, and production as similar as possible.
+    - Logs
+      - Treat logs as event streams.
+    - Admin processes
+      - Run admin/management tasks as one-off processes.
+  - Desirable qualities of a build process
+    - Correct
+      - never need to "clean" or wonder if build outputs are up-to-date
+    - Fast
+      - provides fast build execution
+    - Parallelism
+      - execute on multiple local or remote CPUs
+    - Incremental
+      - don't re-build everything from scratch
+    - Deterministic
+      - the output depends entirely on the inputs (predictability, caching)
+    - Composable
+      - allows reuse of existing build rules and creating new ones by combining them
+    - Universal
+      - Builds Android, iOS, web, backends, cloud services, and more
+    - Multi-process
+      - Isolation, allow more tool runtimes, defense against mem leaks
+- Design Patterns
+  - Creational Patterns
+    - Abstract Factory
+      - Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+    - Builder
+      - Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+    - Factory Method
+      - Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+    - Prototype
+      - Specify the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.
+    - Singleton
+      - Ensure a class has only one instance and provide a global point of access to it.
+  - Structural Patterns
+    - Adapter
+      - Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
+    - Bridge
+        - Decouple an abstraction from its implementation so that the two can vary independently.
+    - Composite
+      - Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
+    - Decorator
+        - Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
+    - Facade
+      - Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+    - Flyweight
+      - Use sharing to support large numbers of fine-grained objects efficiently.
+    - Proxy
+      - Provide a surrogate or placeholder for another object to control access to it.
+  - Behavioral Patterns
+    - Chain of Resp.
+      - Avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+    - Command
+      - Encapsulate a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
+    - Interpreter
+      - Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
+    - Iterator
+      - Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+    - Mediator
+      - Define an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
+    - Memento
+      - Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+    - Observer
+      - Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+    - State
+      - Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
+    - Strategy
+      - Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+    - Template Method
+      - Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+    - Visitor
+      - Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
+- Functional Programming
+  - Arity
+    - The number of arguments a function takes.
+    - From words like unary, binary, ternary, etc.
+  - Higher-Order Functions (HOF)
+    - A function which takes a function as an argument and/or returns a function.
+  - Closure
+    - A closure is a scope which retains variables available to a function when it's created.
+    - This is important for partial application to work.
+  - Partial Application
+    - Partially applying a function means creating a new function by pre-filling some of the arguments to the original function.
+    - Partial application helps create simpler functions from more complex ones by baking in data when you have it.
+    - Curried functions are automatically partially applied.
+  - Currying
+    - The process of converting a function that takes multiple arguments into a function that takes them one at a time.
+  - Auto Currying
+  - Function Composition
+  - Continuation
+  - Purity
+  - Side effects
+  - Idempotent
+  - Point-Free Style
+  - Predicate
+  - Contracts
+  - Category
+  - Value
+  - Constant
+  - Functor
+  - Pointed Functor
+  - Lift
+  - Referential Transparency
+  - Equational Reasoning
+  - Lambda
+  - Lambda Calculus
+  - Lazy evaluation
+  - Monoid
+  - Monad
+  - Comonad
+  - Applicative Functor
+  - Morphism
+    - Endomorphism
+    - Isomorphism
+    - Homomorphism
+    - Catamorphism
+    - Anamorphism
+    - Hylomorphism
+    - Paramorphism
+    - Apomorphism
+  - Setoid
+  - Semigroup
+  - Foldable
+  - Lens
+  - Type Signatures
+  - Algebraic data type
+  - Sum type
+  - Product type
+  - Option
+  - Function
+  - Partial function
+- Algorithms
+  - Sorting
+  - Searching
+- Data Structures
+  - Definitions
+    - Node
+      - an element containing data that make contain links to one or more parents/children May also be referred to as a vertex
+    - Edge
+      - a connection between two nodes
+    - Root
+      - The top node in a tree (a node without a parent)
+    - Parent
+      - A node connected to another node when moving towards the root
+    - Child
+      - a node connectd to another node when moving away from root
+    - Descendant
+      - a node reachable by repeated processing from parent to child
+    - Ancestor
+      - a node reachable by repeated processing from child to parent
+    - Leaf
+      - a node without any children
+    - Degree
+      - the number of sub trees of a node
+    - Path
+      - a sequence of nodes and edges connecting a node with a descendant
+    - Depth
+      - the depth of a node is the number of edges from the node to the tree’s root node
+    - Subtree
+      - of a tree T is a tree consisting of a node in T and all of it’s descendants in T
+  - Concepts
+    - Binary Tree
+      - A binary tree is a tree data structure in which each node has at most two children.
+        - Full Binary tree
+          - every node in the tree has 0 or 2 children
+        - Perfect binary tree
+          - all interior nodes have two children and all leaves have the same depth or level
+        - Complete binary tree
+          - every level except possibly the last is completely filled, and all nodes in the last level are as far left as possible
+    - Binary Search Tree (BST)
+      - A binary search tree (BST) is a data structure that binary tree that keeps it’s keys in sorted order, so that operations can take advantage of the binary search principle (a logarithmic search that takes happens in O(log n) time).
+    - B-Tree
+      - A B-tree is a self-balancing tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. It is a generalization of a binary search tree in that a node can have more than two children. A B-tree is optimized for systems that read and write large blocks of data. B-tree’s are commonly used in databases and file systems.
+    - AVL Tree
+      - An AVL Tree is a self-balancing binary search tree. The height of the two child subtrees of any node differ at most by one, otherwise the tree is re-balanced. Lookup, insertion, and deletion take O(log n) time. Insertions and deletion may cause a tree rotation.
+    - Red-Black Tree
+      - A red-black tree is a self-balancing binary search tree. Each node of the tree has an extra bit, which is interpreted as either black or red. The color bits are used to ensure the tree remains balanced during insertions and deletions. Operations occur in O(log n) time.
+    - B+ Tree
+      - A B+ tree is a B-tree in which each node only contains keys (not key-values), and to which an additional level is added at the bottom with linked leaves.
+      - This makes for more efficient retrieval of data in block-oriented storage (once you find the start of the block, you can read sequentially without having to traverse up and down the tree to retrieve data nodes). Additionally, all leave nodes must be the same distance from the root node.
+      - SQL Server & Oracle store table indexes in B+ trees, which are similar to B-trees, except that data is only stored in leaf nodes - all other nodes hold only key values and pointers to the next nodes.
+    - Tree Traversal
+      - Depth-first search
+        - In a depth-first search, the search is deepened as much as possible on each child before going to the next sibling
+        - Pre-Order
+          - Display data of root
+          - Traverse left subtree calling preorder function
+          - Traverse right subtree calling preorder function
+        - In-Order
+            - Traverse left subtree calling preorder function
+            - Display data of root
+            - Traverse right subtree calling preorder function
+          - An In-Order search will return the sorted contents of a BST (Binary Search Tree)
+        - Post-Order
+          - Traverse left subtree calling preorder function
+          - Traverse right subtree calling preorder function
+          - Display data of root
+        - A stack can be used to perform a depth-first search
+      - Breadth-first search
+        - In a breadth-first search, all nodes on a level are visited before going to a lower level.
+        - A Queue is often used to peform a breadth-first search
+    - Tree Rotation
+- Solutions
+  - Features of Bazel
+    - Incremental
+      - Rebuild time is proportional to what you changed
+    - Deterministic
+      - We can cache build results based on their inputs
+    - Hermetic
+      - allows features like remote execution, parallelization
+    - Composable
+      - Bazel plugins are like Unix pipes, allows novel chaining
+    - Universal
+      - Builds Android, iOS, web, backends, cloud services, and more
+    - Industrial grade
+      - Googlers have beat on this thing in every way
+  - JavaScript
+    - Lexical Structure
+    - Expressions
+    - Types
+    - Variables
+    - Functions
+    - this
+    - Arrow Functions
+    - Loops
+    - Loops and Scope
+    - Arrays
+    - Template Literals
+    - Semicolons
+    - Strict Mode
+    - ECMAScript 6, 2016, 2017
+  - Node.js
+    - The V8 JavaScript Engine
+      - V8 provides the runtime environment in which JavaScript executes.
+      - The DOM, and the other Web Platform APIs are provided by the browser.
+    - Asynchronous programming and callbacks
+    - Timers
+    - Promises
+    - Async and Await
+    - Closures
+    - The Event Loop
+- Definitions
+  - AJAX
+    - Asynchronous JavaScript and XML (known as AJAX) is a term that describes a new approach to using multiple technologies together in order to enable web applications to make quick updates to the user interface without reloading the entire browser page.
+  - API
+    - API stands for Application Programming Interface and is a set of features and rules provided by a provided by a software to enable third-party software to interact with it.
+    - The code features of a web API usually include methods, properties, events or URLs.
+  - Argument
+    - An argument is a value passed as an input to a function and can be either a primitive or an object.
+    - In JavaScript, functions can also be passed as arguments to other functions.
+  - Array
+    - Arrays are used to store multiple values in a single variable.
+    - Arrays are ordered and each item in an array has a numeric index associated with it.
+    - JavaScript arrays are zero-indexed, meaning the first element's index is 0.
+  - Asynchronous programming
+    - Asynchronous programming is a way to allow multiple events to trigger code without waiting for each other.
+    - The main benefits of asynchronous programming are improved application performance and responsiveness.
+  - Automatic semicolon insertion
+    - Automatic semicolon insertion (ASI) is a JavaScript feature that allows developers to omit semicolons in their code.
+  - Boolean
+    - Booleans are one of the primitive data types in JavaScript.
+    - They represent logical data values and can only be `true` or `false`.
+  - Callback
+    - A callback function, also known as a high-order function, is a function that is passed into another function as an argument, which is then executed inside the outer function.
+    - Callbacks can be synchronous or asynchronous.
+  - Character encoding
+    - A character encoding defines a mapping between bytes and text, specifying how the sequenece of bytes should be interpreted.
+    - Two commonly used character encodings are ASCII and UTF-8.
+  - Class
+    - In object-oriented programming, a class is a template definition of an object's properties and methods.
+  - Closure
+    - A closure is the combination of a function and the lexical environment within which that function was declared.
+    - The closure allows a function to access the contents of that environment.
+  - CoffeeScript
+    - CoffeeScript is a programming language inspired by Ruby, Python and Haskell that transpiles to JavaScript.
+  - Constant
+    - A constant is a value, associated with an identifier.
+    - The value of a constant can be accessed using the identifier and cannot be altered during execution.
+  - Constructor
+    - In class-based object-oriented programming, a constructor is a special type of function called to instantiate an object.
+    - Constructors often accept arguments that are commonly used to set member properties.
+  - Continuous Deployment
+    - Continuous Deployment follows the testing that happens during Continuous Integration and pushes changes to a staging or production system.
+    - Continuous Deployment ensures that a version of the codebase is accessible at all times.
+  - Continuous Integration
+    - Continuous Integration (CI) is the practice of testing each change done to a codebase automatically and as early as possible.
+    - Two popular CI systems that integrate with GitHub are Travis CI and Circle CI.
+  - CORS
+    - Cross-Origin Resource Sharing (known as CORS) is a mechanism that uses extra HTTP headers to tell a browser to let a web application running at one domain have permission to access resources from a server at a different domain.
+  - Cross-site scripting (XSS)
+    - XSS refers to client-side code injection where the attacker injects malicious scripts into a legitimate website or web application.
+    - This is often achieved when the application does not validate user input and freely injects dynamic HTML content.
+  - CSS
+    - CSS stands for Cascading Style Sheets and is a language used to style web pages.
+    - CSS documents are plaintext documents structured with rules, which consist of element selectors and property-value pairs that apply the styles to the specified selectors.
+  - CSV
+    - CSV stands for Comma-Separated Values and is a storage format for tabular data.
+    - CSV documents are plaintext documents where each line represents a table row, with table columns separated by commas or some other delimiter (e.g. semicolons).
+    - The first line of a CSV document sometimes consists of the table column headings for the data to follow.
+  - Currying
+    - Currying is a way of constructing functions that allows partial application of a function's arguments.
+    - Practically, this means that a function is broken down into a series of functions, each one accepting part of the arguments.
+  - Deserialization
+    - Deserialization is the process of converting a format that has been transferred over a network and/or used for storage to an object or data structure.
+    - A common type of deserialization in JavaScript is the conversion of JSON string into an object.
+  - DNS
+    - A DNS (Domain Name System) translates domain names to the IP addresses needed to find a particular computer service on a network.
+  - DOM
+    - The DOM (Document Object Model) is a cross-platform API that treats HTML and XML documents as a tree structure consisting of nodes.
+    - These nodes (such as elements and text nodes) are objects that can be programmatically manipulated and any visible changes made to them are reflected live in the document.
+    - In a browser, this API is available to JavaScript where DOM nodes can be manipulated to change their styles, contents, placement in the document, or interacted with through event listeners.
+  - Domain name registrar
+    - A domain name registrar is a company that manages the reservation of internet domain names.
+    - A domain name registrar must be approved by a general top-level domain (gTLD) registry or a country code top-level domain (ccTLD) registry.
+  - Domain name
+    - A domain name is a website's address on the Internet, used primarily in URLs to identify the server for each webpage.
+    - A domain name consists of a hierarchical sequence of names, separated by dots and ending with an extension.
+  - Element
+    - A JavaScript representation of a DOM element commonly returned by `document.querySelector()` and `document.createElement()`.
+    - They are used when creating content with JavaScript for display in the DOM that needs to be programatically generated.
+  - ES6
+    - ES6 stands for ECMAScript 6 (also known as ECMAScript 2015), a version of the ECMAScript specification that standardizes JavaScript.
+    - ES6 adds a wide variety of new features to the specification, such as classes, promises, generators and arrow functions.
+  - Event-driven programming
+    - Event-driven programming is a programming paradigm in which the flow of the program is determined by events (e.g. user actions, thread messages, sensor outputs).
+    - In event-driven applications, there is usually a main loop that listens for events and trigger callback functions accordingly when one of these events is detected.
+  - Event loop
+    - The event loop handles all asynchronous callbacks.
+    - Callbacks are queued in a loop, while other code runs, and will run one by one when the response for each one has been received.
+    - The event loop allows JavaScript to perform non-blocking I/O operations, despite the fact that JavaScript is single-threaded.
+  - Express
+    - Express is a backend framework, that provides a layer of fundamental web application features for Node.js.
+    - Some of its key features are routing, middleware, template engines and error handling.
+  - Factory functions
+    - In JavaScript, a factory function is any function, which is not a class or constructor, that returns a new object.
+    - Factory functions don't require the use of the `new` keyword.
+  - First-class function
+    - A programming language is said to have first-class functions if it treats them as first-class citizens, meaning they can be passed as arguments, be returned as values from other functions, be assigned to variables and stored in data structures.
+  - Flexbox
+    - Flexbox is a one-dimensional layout model used to style websites as a property that could advance space distribution between items and provide powerful alignment capabilities.
+  - Function
+    - Functions are self-contained blocks of code with their own scope, that can be called by other code and are usually associated with a unique identifier.
+    - Functions accept input in the form of arguments and can optionally return an output (if no `return` statement is present, the default value of `undefined` will be returned instead).
+    - JavaScript functions are also objects.
+  - Functional programming
+    - Functional programming is a paradigm in which programs are built in a declarative manner using pure functions that avoid shared state and mutable data.
+    - Functions that always return the same value for the same input and don't produce side effects are the pillar of functional programming.
+  - Functor
+    - A Functor is a data type common in functional programming that implements a `map` method.
+    - The `map` method takes a function and applies it to the data in the Functor, returning a new instance of the Functor with the result.
+    - JavaScript `Array`s are an example of the Functor data type.
+  - Garbage collection
+    - Garbage collection is a form of automatic memory management.
+    - It attempts to reclaim memory occupied by objects that are no longer used by the program.
+  - Git
+    - Git is an open-source version control system, used for source code management.
+    - Git allows users to copy (clone) and edit code on their local machines, before merging it into the main code base (master repository).
+  - Higher-order function
+    - Higher-order functions are functions that either take other functions as arguments, return a function as a result, or both.
+  - Hoisting
+    - Hoisting is JavaScript's default behavior of adding declarations to memory during the compile phase.
+    - Hoisting allows for JavaScript variables to be used before the line they were declared on.
+  - HTML
+    - HTML stands for HyperText Markup Language and is a language used to structure web pages.
+    - HTML documents are plaintext documents structured with elements, which are surrounded by `<>` tags and optionally extended with attributes.
+  - HTTP and HTTPS
+    - The HyperText Transfer Protocol (HTTP) is the underlying network protocol that enables transfer of hypermedia documents on the Web, usually between a client and a server.
+    - The HyperText Transfer Protocol Secure (HTTPS) is an encrypted version of the HTTP protocol, that uses SSL to encrypt all data transfered between a client and a server.
+  - Integer
+    - Integers are one of the primitive data types in Javascript.
+    - They represent a numerical value that has no fractional component.
+  - Integration testing
+    - Integration testing is a type of software testing, used to test groups of units/components of a software.
+    - The purpose of integration tests are to validate that the units/components interact with each other as expected.
+  - IP
+    - An IP address is a number assigned to a device connected to a network that uses the Internet protocol.
+    - Two IP versions are currently in use - IPv4, the older version of the communication protocol (e.g. 192.168.1.100) and IPv6, the newest version of the communication protocol which allows for many different IP addresses (e.g. 0:0:0:0:ffff:c0a8:164).
+  - jQuery
+    - jQuery is a frontend JavaScript library, that simplifies DOM manipulation, AJAX calls and Event handling.
+    - jQuery uses its globally defined function, `$()`, to select and manipulate DOM elements.
+  - JSON
+    - JSON (JavaScript Object Notation) is a format for storing and exchanging data.
+    - It closely resembles the JavaScript object syntax, however some data types, such as dates and functions, cannot be natively represented and need to be serialized first.
+  - MDN
+    - MDN Web Docs, formerly known as Mozilla Developer Network, is the official Mozilla website for development documentation of web standards and Mozilla projects.
+  - Module
+    - Modules are independent, self-contained pieces of code that can be incorporated into other pieces of code.
+    - Modules improve maintainability and reusability of the code.
+  - MongoDB
+    - MongoDB is a NoSQL database model that stores data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time
+  - Mutable value
+    - Mutable value is a type of variable that can be changed once created.
+    - Objects are mutable as their state can be modified after they are created.
+    - Primitive values are not mutable as we perform reassignment once we change them.
+  - MVC
+    - MVC stands for Model-View-Controller and is a software design pattern, emphasizing separation of concerns (logic and display).
+    - The Model part of the MVC pattern refers to the data and business logic, the View handles the layout and display, while the Controller routes commands to the model and view parts.
+  - Node.js
+    - Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+    - Node.js can execute JavaScript code outside of the browser and can be used to develop web backends or standalone applications.
+  - NoSQL
+    - NoSQL databases provide a mechanism to create, update, retrieve and calculate data that is stored in models that are non-tabular.
+  - Npm
+    - Npm is a package manager for the JavaScript programming language and the default package manager for Node.js.
+    - It consists of a command-line client and the npm registry, an online database of packages.
+  - Object-oriented programming
+    - Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which may contain both data and procedures which can be use to operate on them.
+    - JavaScript supports Object-oriented programming both via prototypes and classes.
+  - Object
+    - Objects are data structures that contain data and instructions for working with the data.
+    - Objects consist of key-value pairs, where the keys are alphanumeric identifiers and the values can either be primitives or objects.
+    - JavaScript functions are also objects.
+  - Prepared statements
+    - In databases management systems, prepared statements are templates that can be used to execute queries with the provided values substituting the template's parameters.
+    - Prepared statements offer many benefits, such as reusability, maintainability and higher security.
+  - Promise
+    - The Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.
+    - A Promise can be in one of these states: pending(initial state, neither fulfilled nor rejected), fulfilled(operation completed successfully), rejected(operation failed).
+  - Prototype-based programming
+    - Prototype-based programming is a style of object-oriented programming, where inheritance is based on object delegation, reusing objects that serve as prototypes.
+    - Prototype-based programming allows the creation of objects before defining their classes.
+  - Pseudo-class
+    - In CSS, a pseudo-class is used to define a special state of an element and can be used as a selector in combination with an id, element or class selector.
+  - Pseudo-element
+    - In CSS, a pseudo-element is used to style specific parts of an element and can be used as a selector in combination with an id, element or class selector.
+  - PWA
+    - Progressive Web App (known as PWA) is a term used to describe web applications that load like regular websites but can offer the user functionality such as working offline, push notifications, and device hardware access that were traditionally available only to native mobile applications.
+  - React
+    - React is a frontend framework, that allows developers to create dynamic, component-based user interfaces.
+    - React separates view and state, utilizing a virtual DOM to update the user interface.
+  - Recursion
+    - Recursion is the repeated application of a process.
+    - In JavaScript, recursion involves functions that call themselves repeatedly until they reach a base condition.
+    - The base condition breaks out of the recursion loop because otherwise the function would call itself indefinitely.
+    - Recursion is very useful when working with nested data, especially when the nesting depth is dynamically defined or unkown.
+  - Regular expressions
+    - Regular expressions (known as regex or regexp) are patterns used to match character combinations in strings.
+    - JavaScript provides a regular expression implementation through the `RegExp` object.
+  - Repository
+    - In a version control system, a repository (or repo for short) is a data structure that stores metadata for a set of files (i.e. a project).
+  - Responsive web design
+    - Responsive web design is a web development concept aiming to provide optimal behavior and performance of websites on all web-enabled devices.
+    - Responsive web design is usually coupled with a mobile-first approach.
+  - Scope
+    - Each function has its own scope, and any variable declared within that function is only accessible from that function and any nested functions.
+  - Selector
+    - A CSS selector is a pattern that is used to select and/or style one or more elements in a document, based on certain rules.
+    - The order in which CSS selectors apply styles to elements is based on the rules of CSS specificity.
+  - SEO
+    - SEO stands for Search Engine Optimization and refers to the process of improving a website's search rankings and visibility.
+  - Serialization
+    - Serialization is the process of converting an object or data structure into a format suitable for transfer over a network and/or storage.
+    - A common type of serialization in JavaScript is the conversion of an object into a JSON string.
+  - Shadow DOM
+    - Shadow DOM allows you to attach hidden DOM trees to elements in the normal DOM tree, which are included in the document rendering, but excluded from the main document DOM tree.
+    - A shadow DOM tree will start with a shadow root, to which you can attach any elements you want, just like in a regular DOM.
+    - Examples of shadow DOM uses are the `<video>`/`<audio>` elements and the simple `<input type="range">` element.
+  - SQL injection
+    - SQL injection is a code injection technique, used to attack data-driven applications.
+    - SQL injections get their name from the SQL language and mainly target data stored in relational databases.
+  - SQL
+    - SQL stands for Structured Query Language and is a language used to create, update, retrieve and calculate data in table-based databases.
+    - SQL databases use a relational database model and are particularly useful in handlind structured data with relations between different entities.
+  - SSL
+    - Secure Sockets Layer, commonly known as SSL or TLS, is a set of protocols and standards for transferring private data across the Internet.
+    - SSL uses a cryptographic system that uses two keys to encrypt data.
+  - Stream
+    - A stream is a sequence of data made available over time, often due to network transmission or storage access times.
+  - Strict mode
+    - JavaScript's strict mode is a JavaScript feature that allows developers to use a more restrictive variant of JavaScript and it can be enabled by adding `'use strict';` at the very top of their code.
+    - Strict mode elimiated some silent errors, might improve performance and changes the behavior of `eval` and `arguments` among other things.
+  - String
+    - Strings are one of the primitive data types in JavaScript.
+    - They are sequences of characters and are used to represent text.
+  - SVG
+    - SVG stands for Scalable Vector Graphics and is a 2D vector image format based on an XML syntax.
+    - SVG images can scale infinitely and can utilize clipping, masking, filters, animations etc.
+  - Template literals
+    - Template literals are strings that allow embedded expressions.
+    - They support multi-line strings, expression interpolation and nesting.
+  - TypeScript
+    - TypeScript is a superset of JavaScript, adding optional static typing to the language.
+    - TypeScript compiles to plain JavaScript.
+  - Unit testing
+    - Unit testing is a type of software testing, used to test individual units/components of a software.
+    - The purpose of unit tests are to validate that each individual unit/component performs as designed.
+  - URI
+    - URI stands for Uniform Resource Identifier and is a text string referring to a resource.
+    - A common type of URI is a URL, which is used for the identification of resources on the Web.
+  - URL
+    - URL stands for Uniform Resource Locator and is a text string specifying where a resource can be found on the Internet.
+    - In the HTTP protocol, URLs are the same as web addresses and hyperlinks.
+  - UTF-8
+    - UTF-8 stands for UCS Transformation Format 8 and is a commonly used character encoding.
+    - UTF-8 is backwards compatible with ASCII and can represent any standard Unicode character.
+  - Value vs reference
+    - When passing a variable by value, a copy of the variable is made, meaning that any changes made to the contents of the variable will not be reflected in the original variable.
+    - When passing a variable by reference, the memory address of the actual variable is passed to the function or variable, meaning that modifying the variable's contents will be reflected in the original variable.
+    - In JavaScript primitive data types are passed by value while objects are passed by reference.
+  - Variable
+    - A variable is a storage location, associated with an identifier and containing a value.
+    - The value of a variable can be referred using the identifier and can be altered during execution.
+  - Viewport
+    - A viewport is a polygonal (usually rectangular) area in computer graphics that is currently being viewed.
+    - In web development and design, it refers to the visible part of the document that is being viewed by the user in the browser window.
+  - Vue
+    - Vue.js is a progressive frontend framework for building user interfaces.
+    - Vue.js separates view and state, utilizing a virtual DOM to update the user interface.
+  - WebAssembly
+    - WebAssembly (WA) is a web standard that defines an assembly-like text format and corresponding binary format for executalbe code in web pages.
+    - WebAssembly is meant to complement JavaScript and improve its performance to match native code performance.
+  - Web Components
+    - Web Components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use on web pages and apps.
+    - Building custom components using these standards means that you can use them across modern browsers regardless of any JavaScript library or framework.
+  - WebGL
+    - WebGL stands for Web Graphics Library and is a JavaScript API that can be used for drawing interactive 2D and 3D graphics.
+    - WebGL is based on OpenGL and can be invoked within HTML `<canvas>` elements, which provide a rendering surface.
+  - WebRTC
+    - WebRTC stands for Web Real-Time Communication and is an API that can be used for video-chat, voice-calling and P2P-file-sharing web apps.
+  - WebSockets
+    - WebSockets is a protocol that allows for a persistent client-server TCP connection.
+    - The WebSocket protocol uses lower overheads, facilitating real-time data transfer between client and server.
+  - XHTML
+    - XHTML stands for EXtensible HyperText Markup Language and is a language used to structure web pages.
+    - XHTML is a reformulation of the HTML document structure as an application of XML.
+  - XML
+    - XML stands for eXtensible Markup Language and is a generic markup language specified by the W3C.
+    - XML documents are plaintext documents structured with user-defined tags, surrounded by `<>` and optionally extended with attributes.
+  - Yarn
+    - Yarn is a package manager made by Facebook.
+    - It can be used as an alternative to the npm package manager and is compatible with the public NPM registry.
+
+Uncle Bob’s clean Architecture
+
+![Uncle Bob’s clean Architecture](https://cdn-images-1.medium.com/max/1400/1*D1EvAeK74Gry46JMZM4oOQ.png)
+
+Separation of concerns
+
+![Separation of concerns](https://cdn-images-1.medium.com/max/1400/0*JD606Sqx6RYZLKdu.)
+
+Entities layer reused in multiple applications
+
+![Entities layer reused in multiple applications](https://cdn-images-1.medium.com/max/800/1*yvvxfbLwUcmOqr7jvba86Q.png)
+
+Mobile Client Examples
+
+![Mobile Client Example](https://camo.githubusercontent.com/a7db43737e1ea0578d0dad6094f3728acc2adfab/68747470733a2f2f692d6d73646e2e7365632e732d6d7366742e636f6d2f64796e696d672f49433335313030372e706e67)
+
+Technical Debt
+
+![Technical Debt](https://www.chudovo.com/Content/Images/Blog/CleanCode/why-clean-code.png)
+
+Test Pyramid
+
+![Test Pyramid](images/test-pyramid.jpg)
+
+Acceptance Test-Driven Development
+
+![Acceptance Test-Driven Development](https://toolsqa.com/wp-content/uploads/2017/03/ATDD-Acceptance-test-driven-development.png)
+
+ATDD Cycle
+
+![ATDD Cycle](https://www.beeva.com/wp-content/uploads/2016/01/Flujo-atdd-tdd.png)
+
+ATDD Process
+
+![ATDD Process](images/ATDD-process.jpg)
+
