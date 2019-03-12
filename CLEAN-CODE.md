@@ -1,8 +1,5 @@
 # Clean Code
 
-> References
-- [Clean Code Cheat Sheet ](https://www.planetgeek.ch/wp-content/uploads/2014/11/Clean-Code-V2.4.pdf)
-
 ## Why Clean Code
 Code is clean if it can be understood easily – by everyone on the team. With
 understandability comes readability, changeability, extensibility and
@@ -581,3 +578,35 @@ ATDD Cycle
 ATDD Scheme
 
 ![ATDD Process](ATDD-process.jpg)
+
+
+- Test Types
+  - Unit Tests
+    - Testing of individual functions or classes by supplying input and making sure the output is as expected.
+  - Integration Tests
+    - Testing processes or components to behave as expected, including the side effects.
+  - UI Tests (A.K.A Functional Tests)
+    - Testing scenarios on the product itself, by controlling the browser or the website, regardless of the internal structure to ensure expected behavior.
+
+- Test Tools Types
+  - Test launchers
+  - Testing structure   
+  - Assertions functions providers
+  - Generate and display test progress and results.
+  - Generate and compare snapshots of component and data structures to make sure changes from previous runs are intended
+  - Provide mocks, spies, and stubs
+  - Generate code coverage reports
+  - Browser Controllers simulate user actions for Functional Tests. 
+  - Visual Regression Tools are used to compare your site to its previous versions visually by using image comparison techniques.
+
+- Redux Three Principles
+  - Single source of truth
+    - The state of your whole application is stored in an object tree within a single store.
+  - State is read-only
+    - The only way to change the state is to emit an action, an object describing what happened.
+  - Changes are made with pure functions
+    - To specify how the state tree is transformed by actions, you write pure reducers.
+
+
+
+
