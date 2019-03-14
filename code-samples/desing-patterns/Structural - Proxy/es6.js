@@ -1,28 +1,26 @@
 'use strict';
 
 class Subject {
-  constructor() {
-  }
+  constructor() {}
 
-  Request() {
-  }
+  Request() {}
 }
 
 class RealSubject extends Subject {
   constructor() {
-    super()
-    console.log('RealSubject created')
+    super();
+    console.log('RealSubject created');
   }
 
   Request() {
-    console.log('RealSubject handles request')
+    console.log('RealSubject handles request');
   }
 }
 
 class Proxy extends Subject {
   constructor() {
-    super()
-    console.log('Proxy created')
+    super();
+    console.log('Proxy created');
   }
 
   Request() {
@@ -32,8 +30,8 @@ class Proxy extends Subject {
 }
 
 function run() {
-  var proxy = new Proxy()
-  proxy.Request()
+  var proxy = new Proxy();
+  proxy.Request();
 }
 
 run();

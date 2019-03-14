@@ -13,17 +13,19 @@
  * ███████████████ ║      █████ ║      █████████████ ╔═╝      █████ ║
  *  ╚══════════════╝       ╚════╝       ╚════════════╝         ╚════╝
  *
- * █████████████═══╗ ███████████████═╗ ███████████████═╗   █████████████═╗ █████═╗   █████═╗
- * ███████████████ ║ ███████████████ ║ ███████████████ ║ ███████████████ ║ █████ ║   █████ ║
- * █████ ╔═══█████ ║  ╚═══█████ ╔════╝  ╚═══█████ ╔════╝ █████ ╔═════════╝ █████ ║   █████ ║
- * █████ ║   █████ ║      █████ ║           █████ ║      █████ ║           █████ ║   █████ ║
- * █████████████ ╔═╝      █████ ║           █████ ║      █████████████═╗   ███████████████ ║
- * ███████████████═╗      █████ ║           █████ ║       ╚█████████████═╗  ╚███████████ ╔═╝
- * █████ ╔═══█████ ║      █████ ║           █████ ║         ╚══════█████ ║    ╚═█████ ╔══╝
- * █████ ║   █████ ║      █████ ║           █████ ║                █████ ║      █████ ║
- * ███████████████ ║ ███████████████═╗      █████ ║      ███████████████ ║      █████ ║
- * █████████████ ╔═╝ ███████████████ ║      █████ ║      █████████████ ╔═╝      █████ ║
- *  ╚════════════╝    ╚══════════════╝       ╚════╝       ╚════════════╝         ╚════╝
+ * █████████████═══╗ ███████████████═╗ ███████████████═╗   █████████████═╗
+ * █████═╗   █████═╗ ███████████████ ║ ███████████████ ║ ███████████████ ║
+ * ███████████████ ║ █████ ║   █████ ║ █████ ╔═══█████ ║  ╚═══█████ ╔════╝
+ * ╚═══█████ ╔════╝ █████ ╔═════════╝ █████ ║   █████ ║ █████ ║   █████ ║ █████
+ * ║           █████ ║      █████ ║           █████ ║   █████ ║ █████████████
+ * ╔═╝      █████ ║           █████ ║      █████████████═╗   ███████████████ ║
+ * ███████████████═╗      █████ ║           █████ ║       ╚█████████████═╗
+ * ╚███████████ ╔═╝ █████ ╔═══█████ ║      █████ ║           █████ ║
+ * ╚══════█████ ║    ╚═█████ ╔══╝ █████ ║   █████ ║      █████ ║           █████
+ * ║                █████ ║      █████ ║ ███████████████ ║ ███████████████═╗
+ * █████ ║      ███████████████ ║      █████ ║ █████████████ ╔═╝ ███████████████
+ * ║      █████ ║      █████████████ ╔═╝      █████ ║ ╚════════════╝
+ * ╚══════════════╝       ╚════╝       ╚════════════╝         ╚════╝
  *
  * █████████████═══╗   ███████████═══╗ ███████████████═╗   ███████████═══╗
  * ███████████████ ║ ███████████████ ║ ███████████████ ║ ███████████████ ║
@@ -37,17 +39,21 @@
  * █████████████ ╔═╝ █████ ║   █████ ║      █████ ║      █████ ║   █████ ║
  *  ╚════════════╝    ╚════╝    ╚════╝       ╚════╝       ╚════╝    ╚════╝
  *
- *   █████████████═╗ ███████████████═╗ █████████████═══╗ █████═╗   █████═╗   █████████████═╗ ███████████████═╗
- * ███████████████ ║ ███████████████ ║ ███████████████ ║ █████ ║   █████ ║ ███████████████ ║ ███████████████ ║
- * █████ ╔═════════╝  ╚═══█████ ╔════╝ █████ ╔═══█████ ║ █████ ║   █████ ║ █████ ╔═════════╝  ╚═══█████ ╔════╝
- * █████ ║                █████ ║      █████ ║   █████ ║ █████ ║   █████ ║ █████ ║                █████ ║
- * █████████████═╗        █████ ║      █████████████ ╔═╝ █████ ║   █████ ║ █████ ║                █████ ║
- *  ╚█████████████═╗      █████ ║      ███████████████═╗ █████ ║   █████ ║ █████ ║                █████ ║
- *    ╚══════█████ ║      █████ ║      █████ ║   █████ ║ █████ ║   █████ ║ █████ ║                █████ ║
- *           █████ ║      █████ ║      █████ ║   █████ ║ █████ ║   █████ ║ █████ ║                █████ ║
- * ███████████████ ║      █████ ║      █████ ║   █████ ║ ███████████████ ║ ███████████████═╗      █████ ║
- * █████████████ ╔═╝      █████ ║      █████ ║   █████ ║  ╚███████████ ╔═╝  ╚█████████████ ║      █████ ║
- *  ╚════════════╝         ╚════╝       ╚════╝    ╚════╝    ╚══════════╝      ╚════════════╝       ╚════╝
+ *   █████████████═╗ ███████████████═╗ █████████████═══╗ █████═╗   █████═╗
+ * █████████████═╗ ███████████████═╗ ███████████████ ║ ███████████████ ║
+ * ███████████████ ║ █████ ║   █████ ║ ███████████████ ║ ███████████████ ║ █████
+ * ╔═════════╝  ╚═══█████ ╔════╝ █████ ╔═══█████ ║ █████ ║   █████ ║ █████
+ * ╔═════════╝  ╚═══█████ ╔════╝ █████ ║                █████ ║      █████ ║
+ * █████ ║ █████ ║   █████ ║ █████ ║                █████ ║ █████████████═╗
+ * █████ ║      █████████████ ╔═╝ █████ ║   █████ ║ █████ ║                █████
+ * ║ ╚█████████████═╗      █████ ║      ███████████████═╗ █████ ║   █████ ║
+ * █████ ║                █████ ║ ╚══════█████ ║      █████ ║      █████ ║ █████
+ * ║ █████ ║   █████ ║ █████ ║                █████ ║ █████ ║      █████ ║ █████
+ * ║   █████ ║ █████ ║   █████ ║ █████ ║                █████ ║ ███████████████
+ * ║      █████ ║      █████ ║   █████ ║ ███████████████ ║ ███████████████═╗
+ * █████ ║ █████████████ ╔═╝      █████ ║      █████ ║   █████ ║  ╚███████████
+ * ╔═╝  ╚█████████████ ║      █████ ║ ╚════════════╝         ╚════╝       ╚════╝
+ * ╚════╝    ╚══════════╝      ╚════════════╝       ╚════╝
  *
  * █████═╗   █████═╗ █████████████═══╗ ████████████████═╗   ██████████████═╗
  * █████ ║   █████ ║ ███████████████ ║ ████████████████ ║ ████████████████ ║
@@ -80,8 +86,8 @@
  *   - Manage complexity and make your programs easier to follow.
  *   - Build high-performance, memory-efficient programs.
  *
- * I believe that the former is more important. Using the right 
- * data structure can drastically simplify what would otherwise 
+ * I believe that the former is more important. Using the right
+ * data structure can drastically simplify what would otherwise
  * be complicated logic.
  *
  * The latter is important too. If performance or memory matters then
@@ -138,8 +144,8 @@
  * control the computer. (That's how computers work right?)
  *
  * Any given task can be implemented in an infinite number of ways. So for
- * common tasks there are often many different algorithms that people have come up
- * with.
+ * common tasks there are often many different algorithms that people have come
+ * up with.
  *
  * For example, there are an absurd number of algorithms for sorting a set of
  * unordered items:
@@ -220,9 +226,10 @@
  *     O(N log N)     11.609...    33.219...      84.638...      147.204...
  *     O(N ^ 2)       25           100            400            900
  *     O(2 ^ N)       32           1024           1,048,576      1,073,741,824
- *     O(N!)          120          3,628,800      2,432,902,0... 265,252,859,812,191,058,636,308,480,000,000
+ *     O(N!)          120          3,628,800      2,432,902,0...
+ * 265,252,859,812,191,058,636,308,480,000,000
  *
- * As you can see, even for relatively small sets of data you could do 
+ * As you can see, even for relatively small sets of data you could do
  * a **lot** of extra work.
  *
  * With data structures, you can perform 4 primary types of actions:
@@ -322,7 +329,6 @@
  */
 
 class List {
-
   /**
    * We start with an empty block of memory which we are going to represent
    * with a normal JavaScript array and we'll store the length of the list.
@@ -509,8 +515,8 @@ class List {
 \*** ===================================================================== ***/
 
 /**
- * A hash table is a data structure that's *unordered*. Instead we have "keys" and "values" where we
- * computed an address in memory using the key.
+ * A hash table is a data structure that's *unordered*. Instead we have "keys"
+ * and "values" where we computed an address in memory using the key.
  *
  * The basic idea is that we have keys that are "hashable" (which we'll get to
  * in a second) and can be used to add, access, and remove from memory very
@@ -523,7 +529,6 @@ class List {
  */
 
 class HashTable {
-
   /**
    * Again we're going to use a plain JavaScript array to represent our memory.
    */
@@ -553,7 +558,8 @@ class HashTable {
    * get turned into the same address.
    *
    * Any real-world hash table implementation would have to deal with this,
-   * however, we are just going to glaze over it and pretend that doesn't happen.
+   * however, we are just going to glaze over it and pretend that doesn't
+   * happen.
    */
 
   /**
@@ -569,7 +575,7 @@ class HashTable {
     for (let index = 0; index < key.length; index++) {
       // Oh look– magic.
       let code = key.charCodeAt(index);
-      hash = ((hash << 5) - hash) + code | 0;
+      hash = ((hash << 5) - hash + code) | 0;
     }
     return hash;
   }
@@ -665,13 +671,12 @@ class HashTable {
  * However, Stacks can also be implemented with other data structures in order
  * to add functionality to them.
  *
- * The most common usage of the stacks is in the places where you have one process adding
- * items to the stack and another process removing them from the end–
- * prioritizing items added most recently.
+ * The most common usage of the stacks is in the places where you have one
+ * process adding items to the stack and another process removing them from the
+ * end– prioritizing items added most recently.
  */
 
 class Stack {
-
   /**
    * We're going to again be backed by a JavaScript array, but this time it
    * represents a list like we implemented before rather than memory.
@@ -753,7 +758,6 @@ class Stack {
  */
 
 class Queue {
-
   /**
    * Again, our queue is using a JavaScript array as a list rather than memory.
    */
@@ -880,7 +884,6 @@ class Queue {
  */
 
 class Graph {
-
   /**
    * We'll hold onto all of our nodes in a regular JavaScript array. Not
    * because there is any particular order to the nodes but because we need a
@@ -897,10 +900,7 @@ class Graph {
    */
 
   addNode(value) {
-    return this.nodes.push({
-      value,
-      lines: []
-    });
+    return this.nodes.push({value, lines: []});
   }
 
   /**
@@ -908,9 +908,9 @@ class Graph {
    * you'd have another data structure on top of a graph in order to make
    * searching faster.
    *
-   * But for our case, we're simply going to search through all of the nodes to find
-   * the one with the matching value. This is a slower option, but it works for
-   * now.
+   * But for our case, we're simply going to search through all of the nodes to
+   * find the one with the matching value. This is a slower option, but it works
+   * for now.
    */
 
   find(value) {
@@ -1004,7 +1004,6 @@ class Graph {
  */
 
 class LinkedList {
-
   /**
    * Unlike a graph, a linked list has a single node that starts off the entire
    * chain. This is known as the "head" of the linked list.
@@ -1051,10 +1050,7 @@ class LinkedList {
 
   add(value, position) {
     // First create a node to hold our value.
-    let node = {
-      value,
-      next: null
-    };
+    let node = {value, next: null};
 
     // We need to have a special case for nodes being inserted at the head.
     // We'll set the "next" field to the current head and then replace it with
@@ -1088,7 +1084,7 @@ class LinkedList {
   remove(position) {
     // We should not be able to remove from an empty list
     if (!this.head) {
-      throw new Error('Removing from empty list')
+      throw new Error('Removing from empty list');
     }
     // If we're removing the first node we simply need to set the head to the
     // next node in the chain
@@ -1200,7 +1196,6 @@ class LinkedList {
  */
 
 class Tree {
-
   /**
    * The tree has to start with a single parent, the "root" of the tree.
    */
@@ -1233,10 +1228,7 @@ class Tree {
    */
 
   add(value, parentValue) {
-    let newNode = {
-      value,
-      children: []
-    };
+    let newNode = {value, children: []};
 
     // If there is no root, just set it to the new node.
     if (this.root === null) {
@@ -1325,7 +1317,6 @@ class Tree {
  */
 
 class BinarySearchTree {
-
   /**
    * Same as the previous Tree, we need to have a "root" of the binary search
    * tree.
@@ -1347,7 +1338,6 @@ class BinarySearchTree {
     // We're going to keep running as long as we have another node to visit.
     // If we reach a `left` or `right` that is `null` then this loop ends.
     while (current) {
-
       // If the value is greater than the current.value we move to the right
       if (value > current.value) {
         current = current.right;
@@ -1377,11 +1367,7 @@ class BinarySearchTree {
 
   add(value) {
     // First let's setup our node.
-    let node = {
-      value: value,
-      left: null,
-      right: null
-    };
+    let node = {value: value, left: null, right: null};
 
     // Special case for when there isn't any root node and we just need to add
     // one.
@@ -1396,10 +1382,8 @@ class BinarySearchTree {
     // We're going to loop until we've either added our item or discovered it
     // already exists in the tree.
     while (true) {
-
       // If the value is greater than the current.value we move to the right.
       if (value > current.value) {
-
         // If `right` does not exist, set it to our node, and stop traversing.
         if (!current.right) {
           current.right = node;
@@ -1411,7 +1395,6 @@ class BinarySearchTree {
 
         // If the value is less than the current.value we move to the left.
       } else if (value < current.value) {
-
         // If `left` does not exist, set it to our node, and stop traversing.
         if (!current.left) {
           current.left = node;
@@ -1421,8 +1404,8 @@ class BinarySearchTree {
         // Otherwise just move on to the left node.
         current = current.left;
 
-        // If the number isn't less than or greater, then it must be the same and
-        // we don't do anything.
+        // If the number isn't less than or greater, then it must be the same
+        // and we don't do anything.
       } else {
         break;
       }
@@ -1430,34 +1413,6 @@ class BinarySearchTree {
   }
 }
 
-/*** ===================================================================== ***\
- ** - YOU REACHED THE END! ------------------------------------------------ **
- * ========================================================================= *
- *                                           .''.                            *
- *                 .''.             *''*    :_\/_:     .                     *
- *                :_\/_:   .    .:.*_\/_*   : /\ :  .'.:.'.                  *
- *            .''.: /\ : _\(/_  ':'* /\ *  : '..'.  -=:o:=-                  *
- *           :_\/_:'.:::. /)\*''*  .|.* '.\'/.'_\(/_'.':'.'                  *
- *           : /\ : :::::  '*_\/_* | |  -= o =- /)\    '  *                  *
- *            '..'  ':::'   * /\ * |'|  .'/.\'.  '._____                     *
- *                *        __*..* |  |     :      |.   |' .---"|             *
- *                 _*   .-'   '-. |  |     .--'|  ||   | _|    |             *
- *              .-'|  _.|  |    ||   '-__  |   |  |    ||      |             *
- *              |' | |.    |    ||       | |   |  |    ||      |             *
- * _____________|  '-'     '    ""       '-'   '-.'    '`      |____________ *
- ** jgs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ **
-\*** ===================================================================== ***/
-
-/**
- * I know that was probably a bit dense, but hopefully it gave you a good
- * amount of knowledge. If you enjoyed it, would you mind giving the repo a
- * star and follow me on twitter (@thejameskyle)?
- *
- * You can also check out my other code walkthrough, "The Super Tiny Compiler"
- *       here ------> https://github.com/thejameskyle/the-super-tiny-compiler
- */
-
-// Just exporting everything for the tests...
 module.exports = {
   List,
   HashTable,

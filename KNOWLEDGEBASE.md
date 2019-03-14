@@ -72,7 +72,7 @@
     - Evolvable architecture
       - An architecture that is easy to adapt step by step to keep up with changes.
       - (+) Matches current needs, not the future
-        - The architecture of the current system should match the current needs (functional and non-functional) – not some future ones.
+        - The architecture of the current system should match the current needs (functional and non-functional) - not some future ones.
         - This results in simpler, easier to understand solutions. Otherwise, the risk of waste is very high.
       - (+) No dead-ends, architecture can be extended/adapted
         - The current architecture should be extendable and adaptable so that future needs can be addressed.
@@ -350,10 +350,10 @@
               - SMTP - Simple Mail Transfer Protocol - port 25
               - SSH - Secure Shell - port 22
               - FTP - TCP file transfer service - port 20-21
-              - DNS - Domain Naming System – Resolves FQDNs to IP addresses – port 53
+              - DNS - Domain Naming System - Resolves FQDNs to IP addresses - port 53
               - RDP - Remote Desktop Protocol
               - HTTP - Hypertext Transfer Protocol
-              - DHCP - Dynamic Host Config­uration Protocol - Assigns IP addresses to hosts – ports 67 and 68
+              - DHCP - Dynamic Host Config­uration Protocol - Assigns IP addresses to hosts - ports 67 and 68
               - SNMP - Simple Network Management Protocol
     - Fallacies of distributed computing
       - The network is reliable.
@@ -378,7 +378,7 @@
       - Consistency
         - Every read receives the most recent write or an error.
       - Availability
-        - Every request receives a (non-error) response – without the guarantee that it contains the most recent write.
+        - Every request receives a (non-error) response - without the guarantee that it contains the most recent write.
       - Partition tolerance
         - The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.
     - Benefits of Serverless Architecture
@@ -431,7 +431,7 @@
         - Isolation, allow more tool runtimes, defense against mem leaks
   - Clean Code
     - Why Clean Code
-      - Code is clean if it can be understood easily – by everyone on the team.
+      - Code is clean if it can be understood easily - by everyone on the team.
       - With understandability comes readability, changeability, extensibility and maintainability.
       - All the things needed to keep a project going over a long time without accumulating up a large amount of technical debt.
       - Writing clean code from the start in a project is an investment in keeping the cost of change as constant as possible throughout the lifecycle of a software product.
@@ -530,7 +530,7 @@
       - (+) Continuous Integration
         - Assure integrity with Continuous Integration
       - (-) Overridden Safeties
-        - Do not override warnings, errors, exception handling – they will catch you.
+        - Do not override warnings, errors, exception handling - they will catch you.
     - Dependency Injection
       - (+) Decouple Construction from Runtime
         - Decoupling the construction phase completely from the runtime helps to simplify the runtime behaviour.
@@ -551,7 +551,7 @@
         - “ONE SWITCH”: There may be no more than one switch statement for a given type of selection.
         - The cases in that switch statement must create polymorphic objects that take the place of other such switch statements in the rest of the system.
       - (+) Symmetry / Analogy
-        - Favour symmetric designs (e.g. Load – Save) and designs that follow analogies (e.g. same design as found in .NET framework).
+        - Favour symmetric designs (e.g. Load - Save) and designs that follow analogies (e.g. same design as found in .NET framework).
       - (+) Separate Multi-Threading Code
         - Do not mix code that handles multi-threading aspects with the rest of the code. Separate them into different classes
       - (-) Misplaced Responsibility
@@ -561,7 +561,7 @@
       - (-) Fields Not Defining State
         - Fields holding data that does not belong to the state of the instance but are used to hold temporary data. Use local variables or extract to a class abstracting the performed action.
       - (-) Over Configurability
-        - Prevent configuration just for the sake of it – or because nobody can decide how it should be. Otherwise, this will result in overly complex, unstable systems.
+        - Prevent configuration just for the sake of it - or because nobody can decide how it should be. Otherwise, this will result in overly complex, unstable systems.
       - (-) Micro Layers
         - Do not add functionality on top, but simplify overall.
     - Dependencies
@@ -701,7 +701,7 @@
       - (+) Keep Component
         - If you anticipate only few future changes to a component and the component had few defects in the past, consider keeping it as it is.
     - Refactoring Patterns
-      - (+) Reconcile Differences – Unify Similar Code
+      - (+) Reconcile Differences - Unify Similar Code
         - Change both pieces of code stepwise until they are identical. Then extract.
       - (+) Isolate Change
         - First, isolate the code to be refactored from the rest. Then refactor. Finally, undo isolation.
@@ -723,23 +723,23 @@
       - (+) Coding Dojo
         - In a Coding Dojo, a group of developers come together to exercise their skills. Two developers solve a problem (kata) in pair programming. The rest observe. After 10 minutes, the group rotates to build a new pair. The observers may critique the current solution, but only when all tests are green.
     - Kinds of Automated Tests
-      - ATDD – Acceptance Test Driven Development
+      - ATDD - Acceptance Test Driven Development
         - Specify a feature first with a test, then implement.
-      - TDD – Test Driven Development
-        - Red – green – refactor. Test a little – code a little.
-      - DDT – Defect Driven Testing
-        - Write a unit test that reproduces the defect – Fix code – Test will succeed – Defect will never return.
-      - POUTing – Plain Old Unit Testing
+      - TDD - Test Driven Development
+        - Red - green - refactor. Test a little - code a little.
+      - DDT - Defect Driven Testing
+        - Write a unit test that reproduces the defect - Fix code - Test will succeed - Defect will never return.
+      - POUTing - Plain Old Unit Testing
         - Aka test after. Write unit tests to check existing code. You cannot and probably do not want to test drive everything. Use POUT to increase sanity. Use to add additional tests after TDDing (e.g. boundary cases).
     - Design for Testability
-      - Constructor – Simplicity
+      - Constructor - Simplicity
         - Objects have to be easily creatable. Otherwise, easy and fast testing is not possible.
-      - Constructor – Lifetime
+      - Constructor - Lifetime
         - Pass dependencies and configuration/parameters into the constructor that have a lifetime equal to or longer than the created object. For other values use methods or properties
       - Abstraction Layers at System Boundary
         - Use abstraction layers at system boundaries (database, file system, web services, ...) that simplify unit testing by enabling the usage of fakes.
     - Structure
-      - Arrange – Act – Assert
+      - Arrange - Act - Assert
         - Structure the tests always by AAA. Never mix these three blocks.
       - Test Assemblies (.Net)
         - Create a test assembly for each production assembly and name it as the production assembly + “.Test”/”.Facts”/… .
@@ -806,7 +806,7 @@
       - (-) Irrelevant Information
         - Test contains information that is not relevant to understand it.
       - (-) Chatty Test
-        - A test that fills the console with text – probably used once to manually check for something.
+        - A test that fills the console with text - probably used once to manually check for something.
       - (-) Test Swallowing Exceptions
         - A test that catches exceptions and lets the test pass.
       - (-) Test Not Belonging in Host Test Fixture
@@ -814,7 +814,7 @@
       - (-) Obsolete Test
         - A test that checks something no longer required in the system. May even prevent clean-up of production code because it is still referenced.
       - (-) Hidden Test Functionality
-        - Test functionality hidden in either the SetUp method, base class or helper class. The test should be clear by looking at the test method only – no initialisation or asserts somewhere else.
+        - Test functionality hidden in either the SetUp method, base class or helper class. The test should be clear by looking at the test method only - no initialisation or asserts somewhere else.
       - (-) Bloated Construction
         - The construction of dependencies and arguments used in calls to testee makes test hardly readable. Extract to helper methods that can be reused.
       - (-) Unclear Fail Reason
@@ -865,11 +865,11 @@
     - Green Bar Patterns
       - (+) Fake It (‘Til You Make It)
         - Return a constant to get first test running. Refactor later.
-      - (+) Triangulate – Drive Abstraction
+      - (+) Triangulate - Drive Abstraction
         - Write test with at least two sets of sample data. Abstract implementation on these.
       - (+) Obvious Implementation
         - If the implementation is obvious then just implement it and see if test runs. If not, then step back and just get test running and refactor then.
-      - (+) One to Many – Drive Collection Operations
+      - (+) One to Many - Drive Collection Operations
         - First, implement operation for a single element. Then, step to several elements (and no element).
     - Acceptance Test Driven Development
       - (+) Use Acceptance Tests to Drive Your TDD tests
@@ -973,8 +973,8 @@
         - Compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
       - Decorator
           - Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
-      - Facade
-        - Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
+      - Façade
+        - Provide a unified interface to a set of interfaces in a subsystem. Façade defines a higher-level interface that makes the subsystem easier to use.
       - Flyweight
         - Use sharing to support large numbers of fine-grained objects efficiently.
       - Proxy
@@ -1133,35 +1133,692 @@
           - In a breadth-first search, all nodes on a level are visited before going to a lower level.
           - A Queue is often used to peform a breadth-first search
       - Tree Rotation
-  - Solutions
-    - Features of Bazel
-      - Incremental
-        - Rebuild time is proportional to what you changed
-      - Deterministic
-        - We can cache build results based on their inputs
-      - Hermetic
-        - allows features like remote execution, parallelization
-      - Composable
-        - Bazel plugins are like Unix pipes, allows novel chaining
-      - Universal
-        - Builds Android, iOS, web, backends, cloud services, and more
-      - Industrial grade
-        - Googlers have beat on this thing in every way
-    - JavaScript
-      - Lexical Structure
-      - Expressions
-      - Types
-      - Variables
-      - Functions
-      - this
-      - Arrow Functions
-      - Loops
-      - Loops and Scope
-      - Arrays
-      - Template Literals
-      - Semicolons
-      - Strict Mode
-      - ECMAScript 6, 2016, 2017
+  - Software Architecture
+    - Software Architecture Patterns
+      - Layered Pattern
+        - Split up code into “layers”, where each layer has a certain responsibility and provides a service to a higher layer.
+        - Typical Layers
+          - Presentation or UI layer
+          - Application layer
+          - Business or domain layer
+          - Persistence or data access layer
+          - Database layer
+        - It provides an easy way of writing a well-organized and testable application.
+        - It tends to lead to monolithic applications that are hard to split up afterward.
+        - Developers often find themselves writing a lot of code to pass through the different layers, without adding any value in these layers. If all you are doing is writing a simple CRUD application, the layered pattern might be overkill for you.
+      - Microkernel
+        - Is useful when application has a core set of responsibilities and a collection of interchangeable parts on the side.
+        - The microkernel will provide the entry point and the general flow of the application, without really knowing what the different plug-ins are doing.
+        - This pattern provides great flexibility and extensibility.
+        - Some implementations allow for adding plug-ins while the application is running.
+        - Microkernel and plug-ins can be developed by separate teams.
+        - It can be difficult to decide what belongs in the microkernel and what doesn’t.
+        - The predefined API might not be a good fit for future plug-ins.
+      - Command and Query Responsibility Segregation (CQRS)
+        - Read and write operations that must be totally separated.
+        - This also means that the model used for write operations (commands) will differ from the read models (queries).
+        - Furthermore, the data will be stored in different locations.
+        - In a relational database, this means there will be tables for the command model and tables for the read model.
+        - Command models can focus on business logic and validation while read models can be tailored to specific scenarios.
+        - You can avoid complex queries (e.g. joins in SQL) which makes the reads more performant.
+        - Keeping the command and the read models in sync can become complex.
+      - Event Sourcing
+        - Store the current state of your model in the database, but rather the events that happened to the model.
+        - Provide an audit log out of the box. Each event represents a manipulation of the data at a certain point in time.
+        - This software architecture pattern can provide an audit log out of the box. Each event represents a manipulation of the data at a certain point in time.
+      - Microservices
+        - Writing multiple applications that will work together.
+        - Each microservice has its own distinct responsibility and teams can develop them independently of other microservices.
+        - The only dependency between them is the communication.
+        - As microservices communicate with each other, you will have to make sure messages sent between them remain backwards-compatible.
+        - You can write, maintain, and deploy each microservice separately.
+        - With microservices, a lot of extra concerns come into play: communication, coordination, backward compatibility, logging, etc.
+        - A microservices architecture should be easier to scale, as you can scale only the microservices that need to be scaled. There’s no need to scale the less frequently used pieces of the application.
+        - It’s easier to rewrite pieces of the application because they’re smaller and less coupled to other parts.
+        - A single action of a user can pass through multiple microservices. There are more points of failure, and when something does go wrong, it can take more time to pinpoint the problem.
+        - Components
+          - Discovery
+          - Load-balancer
+          - Resiliency
+          - Metrics
+          - Tracing
+      - Serverless Functions
+        - Short-lived Process
+        - Event-driven Architecture
+      - SaaS
+        - Examples
+          - API Gateway as a Service
+          - Single Sign On (SSO) as a Service
+          - Storage as a Service
+          - DB as a Service
+          - Cache as a Service
+          - Notification as a Service
+          - Messaging as as Service
+  - Cloud Architecture
+    - Cloud Computing Concepts
+      - Patterns of this category describe workload experienced by applications, the service models employed by cloud providers, and the different deployment options for clouds.
+      - Application Workloads
+        - Patterns of this category describe workload experienced by applications. Workload measured in the form of application utilization, for example, the number of requests, server load etc. For each workload pattern it is discussed furthermore how an application experiencing this workload can benefit from cloud computing.
+        - Static Workload
+          - IT resources with an equal utilization over time experience Static Workload.
+          - How can an equal utilization be characterized and how can applications experiencing this workload benefit from cloud computing?
+          - Static Workloads are characterized by a more-or-less flat utilization profile over time within certain boundaries.
+          - An application experiencing Static Workload is less likely to benefit from an elastic cloud that offers a pay-per-use billing, because the number of required resources is constant.
+        - Periodic Workload
+          - IT resources with a peaking utilization at reoccurring time intervals experience periodic workload.
+          - How can a periodically peaking utilization over time be characterized and how can applications experiencing this workload benefit from cloud computing?
+          - In our real lives, periodic tasks and routines are very common. For example, monthly paychecks, monthly telephone bills, yearly car checkups, weekly status reports, or the daily use of public transport during rush hour, all these tasks and routines occur in well-defined intervals.
+          - From a customer perspective the cost-saving potential in scope of Periodic Workload is to use a provider with a pay-per-use pricing model allowing the decommissioning of resources during non-peak times.
+        - Once-in-a-lifetime Workload
+          - IT resources with an equal utilization over time disturbed by a strong peak occurring only once experience Once-in-a-lifetime Workload.
+          - How can equal utilization with a one-time peak be characterized and how can applications experiencing this workload benefit from cloud computing?
+          - As a special case of Periodic Workload, the peaks of periodic utilization can occur only once in a very long timeframe. Often, this peak is known in advance as it correlates to a certain event or task.
+          - The elasticity of a cloud is used to obtain IT resources necessary. The provisioning and decommissioning of IT resources can often be realized as a manual task, because it is performed at a known point in time.
+        - Unpredictable Workload
+          - IT resources with a random and unforeseeable utilization over time experience unpredictable workload.
+          - How can random and unforeseeable utilization be characterized and how can applications experiencing this workload benefit from cloud computing?
+          - Random workloads are a generalization of Periodic Workloads as they require elasticity but are not predictable. Such workloads occur quite often in the real world.
+          - Unplanned provisioning and decommissioning of IT resources is required. The necessary provisioning and decommissioning of IT resources is, therefore, automated to align the resource numbers to changing workload.
+        - Continuously Changing Workload
+          - IT resources with a utilization that grows or shrinks constantly over time experience Continuously Changing Workload.
+          - How can a continuous growth or decline in utilization be characterized and how can applications experiencing this workload benefit from cloud computing?
+          - Many applications experience a long term change in workload.
+          - Continuously Changing Workload is characterized by an ongoing continuous growth or decline of the utilization. Elasticity of clouds enables applications experiencing Continuously Changing Workload to provision or decommission resources with the same rate as the workload changes.
+      - Cloud Service Models
+        - Patterns of this category describe different cloud types and how providers host the infrastructure to host them.
+        - Infrastructure as a Service (IaaS)
+          - Providers share physical and virtual hardware IT resources between customers to enable self-service, rapid elasticity, and pay-per-use pricing.
+          - How can different customers share a physical hosting environment so that it can be used on-demand with a pay-per-use pricing model?
+          - In the scope of Periodic Workloads with reoccurring peaks and the special case of Once-in-a-lifetime Workloads with one dramatic increase in workload, IT resources have to be provisioned flexibly.
+          - A provider offers physical and virtual hardware, such as servers, storage and networking infrastructure that can be provisioned and decommissioned quickly through a self-service interface.
+        - Platform as a Service (PaaS)
+          - Providers share IT resources providing an application hosting environment between customers to enable self-service, rapid elasticity, and pay-per-use pricing.
+          - How can custom applications of the same customer or different customers share an execution environment so that it can be used on-demand with a pay-per-use pricing model?
+          - If many customers require similar hosting environments for their applications, there are many redundant installations resulting in an inefficient use of the overall cloud.
+          - A cloud provider offers managed operating systems and middleware. Management operations are handled by the provider, such as the elastic scaling and failure resiliency of hosted applications.
+        - Software as a Service (SaaS)
+          - Providers share IT resources providing human-usable application software between customers to enable self-service, rapid elasticity, and pay-per-use pricing.
+          - How can customers share a provider-supplied software application so that it can be used on-demand with a pay-per-use pricing model?
+          - Small and medium enterprises may not have the manpower and know-how to develop custom software applications. Other applications have become commodity and are used by many companies, for example, office suites, collaboration software, or communications software.
+          - A provider offers a complete software application to customers who may use it on-demand via a self-service interface.
+      - Cloud Deployment Models
+        - Patterns of this category compare and categorize different Cloud Service Models according to the layers of the application stack for which they provide IT resources.
+        - Public Cloud
+          - IT resources are provided as a service to a very large customer group in order to enable elastic use of a static resource pool.
+          - How can the cloud properties - on demand self-service, broad network access, pay-per-use, resource pooling, and rapid elasticity - be provided to a large customer group?
+          - A provider offering IT resources according to IaaS, PaaS, or SaaS has to maintain physical data centers. IT resources, nevertheless, shall be made accessible dynamically.
+          - The hosting environment is shared between many customers possibly reducing the costs for an individual customer. Leveraging economies of scale enables a dynamic use of resources, because workload peaks of some customers occur during times of low workload of other customers.
+        - Private Cloud
+          - IT resources are provided as a service exclusively to one customer in order to meet high requirements on privacy, security, and trust while enabling elastic use of a static resource pool as good as possible.
+          - How can the cloud properties - on demand self-service, broad network access, pay-per-use, resource pooling, and rapid elasticity - be provided in environments with high privacy, security and trust requirements?
+          - Many factors, such as legal limitations, trust, and security regulations, motivate dedicated, company-internal hosting environments only accessible by employees and applications of a single company.
+          - Cloud computing properties are enabled in a company-internal data center. Alternatively, the Private Cloud may be hosted exclusively in the data center of an external provider, then referred to as outsourced Private Cloud. Sometimes, Public Cloud providers also offer means to create an isolated portion of their cloud made accessible to only one customer: a virtual Private Cloud.
+        - Community Cloud
+          - IT resources are provided as a service to a group of customers trusting each other in order to enable collaborative elastic use of a static resource pool.
+          - How can the cloud properties - on demand self-service, broad network access, pay-per-use, resource pooling, and rapid elasticity - be provided to exclusively to a group of customers forming a community of trust?
+          - Whenever companies collaborate, they commonly have to access shared applications and data to do business. While these companies trust each other due to established contracts etc., the handled data and application functionality may be very sensitive and critical to their business.
+          - IT resources required by all collaborating partners are offered in a controlled environment accessible only by the community of companies that generally trust each other.
+        - Hybrid Cloud
+          - Different clouds and static data centers are integrated to form a homogeneous hosting environment.
+          - How can the cloud properties - on demand self-service, broad network access, pay-per-use, resource pooling, and rapid elasticity - be provided across clouds and other environments?
+          - A company is likely to use a large set of applications to support its business, which have versatile requirements making different Cloud Deployment Models suitable to host them.
+          - Private Clouds, Public Clouds, Community Clouds, and static data centers are integrated to deployed applications to the hosting environment best suited for their requirements while interconnection of these environments.
+    - Cloud Offerings
+      - Patterns of this category cover different functionality found in clouds regarding the functionality they provide to customers and the behavior they display.
+      - Cloud Environments
+        - Patterns of this category descibe the hosting environments of cloud in detail and refer to other offerings composed to form these environments.
+        - Elastic Infrastructure
+          - Hosting of virtual servers, disk storage, and configuration of network connectivity is offered via a self-service interface over a network.
+          - How do Cloud Offerings providing infrastructure resources behave and how should they be used in applications?
+          - An application experiences Periodic Workload, Once-in-a-lifetime Workload, Unpredictable Workload, or Continuously Changing Workload, the number of IT resources, such as servers, should be adjusted dynamically. In scope of the IaaS service model, the applications’ runtime infrastructure, thus, must support dynamic provisioning and decommissioning of virtual servers, disk storage and network connectivity.
+          - An Elastic Infrastructure provides preconfigured virtual server images, storage and network connectivity that may be provisioned by customers using a self-service interface. Monitoring information is provided to inform about resource utilization required for traceable billing and automation of management tasks.
+        - Elastic Platform
+          - Middleware for the execution of custom applications, their communication, and data storage is offered via a self-service interface over a network.
+          - How do Cloud Offerings providing Execution Environments behave and how should they be used in applications?
+          - One of the fundamental cloud properties is the sharing of resources among a large number of customers to leverage economy of scale. Extending resource sharing between customers to the operating systems and middleware increases the beneficial effects of economies of scale as the utilization of these resources can be increased.
+          - Application components of different customers are hosted on shared middleware provided and maintained by the provider. Customers may deploy custom application components to this middleware using a self-service interface. This unification enables resource sharing and an automation of certain management tasks on the provider side, for example, provisioning of applications, update management.
+        - Node-based Availability
+          - A cloud provider guarantees the availability of individual nodes, such as individual virtual servers, middleware components or hosted application components.
+          - How can providers express availability in a node-centric fashion, so that customers may estimate the availability of hosted applications?
+          - A provider offers an Elastic Infrastructure or an Elastic Platform and needs a means to express the availability for the offerings from which the customer may then compute the availability of the hosted application. First, conditions are defined that have to be fulfilled by an available offering. Second, the timeframe needs to be expressed for which the provider assures this availability.
+          - The provider assures availability for each hosted application component, which is defined to be available if it is reachable and performs its function as advertised, i.e., it provides correct results. This timeframe is often expressed as a percentage. An availability of 99.95%, thus, means that a hosted component will be available during 99.95% of the time it is hosted at the provider.
+        - Environment-based Availability
+          - A cloud provider guarantees the availability of the environment hosting individual nodes, such as virtual servers or hosted application components.
+          - How can providers express availability in an environmental-centric fashion, so that customers may estimate the availability of hosted applications?
+          - A cloud provider offers an Elastic Infrastructure or an Elastic Platform on which customers may deploy application components. The availability of this environment has to be expressed so that customers may match their requirements.
+          - The provider assures availability for the provided environment, thus, for the availability of the Elastic Platform or the Elastic Infrastructure as a whole, for example, the availability for at-least-once provisioned component or virtual server and the availability to provision replacements in case of failures is assured. There is no notion of availability for individual application components or virtual servers deployed in this environment.
+      - Processing Offerings
+        - Patterns of this category describe how computation can be performed in the cloud.
+        - Hypervisor
+          - To enable the elasticity of clouds, the time required to provision and decommission servers is reduced through hardware virtualization.
+          - How can virtual hardware that has been abstracted from physical hardware be used in applications?
+          - If multiple applications are deployed on a physical server they may have to consider the other applications in their configuration. For example, if applications require the same network ports, access the same directories in the local file system etc. This sharing of common underlying physical hardware between different applications shall be simplified while also reducing dependencies of the application on the physical server.
+          - A Hypervisor abstracts the hardware of a shared physical server into virtualized hardware. On this virtual hardware, different operating systems and middleware are installed to host applications sharing the physical server while being isolated from each other regarding the use of physical hardware, such as central processing units (CPU), memory, disk storage, and networking.
+        - Execution Environment
+          - To avoid duplicate implementation of functionality, application components are deployed to a hosting environment providing middleware services as well as often used functionality.
+          - How can multiple application components share a hosting environment efficiently?
+          - Applications often use similar functions, for example, to access networking interfaces, display user interfaces, access storage of the server etc. In this case, each application implements similar components that could be shared with other applications. Sharing such common functionality between applications would also result in a better utilization of the environment.
+          - Common functionality is summarized in an Execution Environment providing functionality in platform libraries to be used in custom application implementations and in the form of the middleware. The environment, thus, executes custom application components and provides common functionality for data storages, communication etc.
+        - Map Reduce
+          - Large data sets to be processed are divided into smaller data chunks and distributed among processing application components. Individual results are later consolidated.
+          - How can the performance of complex processing of large data sets be increased through scaling out?
+          - Cloud applications often have to handle very large amounts of data, which have to be processed efficiently. As Distributed Applications are designed to scale out, data processing should be distributed among multiple application component instances in a similar means. Afterwards, results of these distributed components have to be consolidated.
+          - A large data set to be processed is split up and mapped to multiple application components handling data processing. Data Processing Components simultaneously execute the query to be performed on the assigned data chunks. Afterwards, the individual results of all Processing Components are consolidated or reduced into one result data set. During this reduction, additional functions, such calculations of sums, average values etc. may be used.
+      - Storage Offerings
+        - Patterns of this category describe how data can be stored in the cloud.
+        - Block Storage
+          - Centralized storage is integrated into servers as a local hard drive managed by the operating system to enable access to this storage via the local file system.
+          - How can central storage be accessed as a local drive by servers and hosted applications?
+          - Virtual and non-virtualized servers offered as Infrastructure as a Service (IaaS) can be managed significantly easier if they do not store any state information locally, i.e., on their (virtual) hard drives. This eases their provisioning, decommissioning, and failure handling.
+          - Centralized storage is accessed by servers as if it was a local hard drive, also referred to as block device.
+        - Blob Storage
+          - Data is provided in form of large files that are made available in a file system-like fashion by Storage Offerings that provides elasticity.
+          - How can large files be stored, organized and made available over a network?
+          - Distributed cloud applications often need to handle large data elements, also referred to as binary large objects (blob). Examples are virtual server images managed in an Elastic Infrastructure, pictures, or videos.
+          - Data elements are organized in a folder hierarchy similar to a local file system. Each data element is given a unique identifier comprised of its location in the folder hierarchy and a file name. This unique identifier is passed to the storage offerings to retrieve a file over a network.
+        - Relational Database
+          - Data is structured according to a schema that is enforced during data manipulation and enables expressive queries of handled data.
+          - How can data elements be stored so that relations between them can be expressed and expressive queries are enabled to retrieve required information effectively?
+          - Handled data is often comprised of large numbers of similar data elements. These data elements have certain dependencies among each other. If such structured data is queried, clients make certain assumptions about the data structure and the consistency of relations between the retrieved data elements.
+          - Data elements are stored in tables where each column represents an attribute of a data element. Table columns may have dependencies in the way that entries in one table column must also be present in a corresponding column of a different table. These dependencies are enforced during data manipulations.
+        - Key-Value Storage
+          - Semi-structured or unstructured data is stored with limited querying support but high-performance, availability, and flexibility.
+          - How can key-value elements be stored to support scale out and an adjustable data structure?
+          - To ensure availability and performance, a data storage offering shall be distributed among different IT resources and locations. Furthermore, changes of requirements or the fact that customers share a storage offering and have different requirements, raises the demand for a flexible data structure. as data structure validation during queries requires high-performance connectivity between distributed resources storing the data elements.
+          - Pairs of identifiers (key) and associated data (value) are stored. No database schema or only a very limited one are supported to enforce a data structure. The expressiveness of queries is reduced significantly in favor of scalability and configurability: semi-structured on unstructured data can be scaled out among many IT resources without the need to access many of them for the evaluation of expressive queries.
+        - Strict Consistency
+          - Data is stored at different locations (replicas) to improve response time and to avoid data loss in case of failures while consistency of replicas is ensured at all times.
+          - How can data be distributed among replicas to increase availability, while ensuring data consistency at all times?
+          - To ensure failure tolerance, a storage offering duplicates data among multiple replicas. These replicas store the same set of data, so in case any of these replicas is lost, data may still be obtained and recovered from the other replicas.
+          - Data is duplicated among several replicas to increase availability. A subset of data replicas is accessed by read and write operations. The ratio of the number of replicas accessed during read (r) and write (w) operations guarantees consistency: n < r + w
+        - Eventual Consistency
+          - If data is stored at different locations (replicas) to improve response time and avoid data loss in case of failures. Performance and the availability of data in case of network partitioning are enabled by ensuring data consistency eventually and not at all times.
+          - How can data be distributed among replicas with focus on increased availability and performance, while being resilient towards connectivity problems?
+          - Using multiple replicas of data is vital to ensure resiliency of a storage offering towards resource failures. Keeping all these replicas in a consistent state, however, requires a significant overhead as multiple or all data replicas have to be accessed during read and write operations.
+          - The consistency of data is relaxed. This reduces the number of replicas that have to be accessed during read and write operations. Data alterations are eventually transferred to all replicas by propagating them asynchronously over the connection network.
+      - Communication Offerings
+      - Patterns of this category describe how data can be exchanged in the cloud.
+        - Virtual Networking
+          - Networking resources are virtualized to empower customers to configure networks, firewalls, and remote access using a self-service interface.
+          - How can network connectivity between IT resources hosted in a cloud be configured dynamically and on-demand?
+          - Application components deployed on Elastic Infrastructures and Elastic Platforms rely on physical network hardware to communicate with each other and the outside world. On this networking layer, different customers shall be isolated from each.
+          - Physical networking resources, such as networking interface cards, switches, routers etc. are abstracted to virtualized ones. These Virtual Networking resources may share the same physical networking resources. Configuration is handled by customers through self-service interfaces.
+        - Message-oriented Middleware
+          - Asynchronous message-based communication is provided while hiding complexity resulting from addressing, routing, or data formats from communication partners to make interaction robust and flexible.
+          - How can communication partners exchange information asynchronously with a communication partner?
+          - The application components of a Distributed Application are hosted on multiple cloud resources and have to exchange information with each other. Often, the integration with other cloud applications and non-cloud applications is also required.
+          - Communication partners exchange information asynchronously using messages. The message-oriented middleware handles the complexity of addressing, availability of communication partners and message format transformation.
+        - Exactly-once Delivery
+          - For many critical systems duplicate messages are inacceptable. The messaging system ensures that each message is delivered exactly once by filtering possible message duplicates automatically.
+          - How can it be assured that a message is delivered only exactly once to a receiver?
+          - Message duplicity is a very critical design issue for Distributed Applications and or application components that exchange messages via a Message-oriented Middleware.
+          - Upon creation, each message is associated with a unique message identifier. This identifier is used to filter message duplicates during their traversal from sender to receiver.
+        - At-least-once Delivery
+          - In case of failures that lead to message loss or take too long to recover from, messages are retransmitted to assure they are delivered at least once.
+          - How can communication partners or a Message-oriented Middleware ensure that messages are received successfully?
+          - Sometimes, message duplicity can be coped with by the application using a Message-oriented Middleware. Therefore, for scenarios where message duplicates are uncritical, it shall still be ensured that messages are received.
+          - For each message retrieved by a receiver an acknowledgement is sent back to the message sender. In case this acknowledgement is not received after a certain time frame, the message is resend.
+        - Transaction-based Delivery
+          - Clients retrieve messages under a transactional context to ensure that messages are received by a handling component.
+          - How can it be ensured that messages are only deleted from a message queue if they have been received successfully?
+          - While a Message-oriented Middleware can control traversing messages, it may be necessary to assure that messages are actually received successfully from a message queue by the client.
+          - The Message-oriented Middleware and the client reading a message from a queue participate in a transaction. All operations involved in the reception of a message are, therefore, performed under one transactional context guaranteeing ACID behavior.
+        - Timeout-based Delivery
+          - Clients acknowledge message receptions to ensure that messages are received properly.
+          - How can it be ensured that messages are only deleted from a message queue if they have been received successfully at least once?
+          - In addition to ensuring that messages are not lost while they are traversing a Message-oriented Middleware it may, thus, also be required to assure that they are actually received by a client before they are deleted from a message queue.
+          - To assure that a message is properly received, it is not deleted immediately after it has been read by a client, but is only marked as being invisible. In this state a message may not be read by another client. After a client has successfully read a message, it sends an acknowledgement to the message queue upon which reception the message is deleted.
+    - Cloud Application Architectures
+      - Patterns of this category describe how applications using cloud offerings can be built.
+      - Fundamental Cloud Architectures
+        - Patterns of this category cover the fundamental architectural styles that architects and developers have to be aware of when building a cloud-native application.
+        - Loose Coupling
+          - A communication intermediary separates application functionality from concerns of communication partners regarding their location, implementation platform, the time of communication, and the used data format.
+          - How can dependencies between Distributed Applications and between individual components of these applications be reduced?
+          - Information exchange between applications and their individual components as well as associated management tasks, such as scaling, failure handling, or update management can be simplified significantly if application components can be treated individually and the dependencies among them are kept to a minimum.
+          - Communicating components and multiple integrated applications are decoupled from each other by interacting through a broker. This broker encapsulates the assumptions that communication partners would otherwise have to make about one other and, thus, ensures separation of concerns.
+        - Distributed Application
+          - A cloud application divides provided functionality among multiple application components that can be scaled out independently.
+          - How can application functionality be decomposed to be handled by separate application components?
+          - Applications have to respect the distribution and the scaling-out support of cloud environments in their architecture to efficiently benefit from it. Cloud applications, therefore, should to rely on multiple, possibly redundant IT resources. This can especially be the case if the cloud provider assures Environment-based Availability - the availability of the complete environment and not of single IT resources hosted in it.
+          - The functionality of the application is divided into multiple independent components that provide a certain function. This componentization of application functionality introduces a logical decomposition of the application. These logical components are subsumed to multiple tiers to denote that they shall be deployed together physically, i.e., on one server (cluster).
+          - Layer-based decomposition divides the application into separate logical layers. Components are restricted to access components of the same layer or one layer below.
+          - Process-based decomposition focuses on the business processes supported by the application. These processes are comprised out of activities that are executed in a specific order. Functionality is divided into components with respect to the supported business activity.
+          - Pipes-and-filters-based decomposition focues on for data-centric processing of an application. Each filter provides a certain function that is performed on input data and produces output data after processing. Multiple filters are interconnected with pipes, i.e, through messaging.
+      - Cloud Application Components
+        - Patterns of this category refine how functionality of a cloud application can be implemented in seperate components.
+        - Stateful Component
+          - Multiple instances of a scaled-out application component synchronize their internal state to provide a unified behavior.
+          - How can applications components that are scaled-out maintain a synchronized internal state?
+          - To benefit from a distributed cloud runtime environment, components of a Distributed Application are deployed to multiple cloud resources and their instances are scaled-out. Some of these application components may need to maintain an internal state, thus, the challenge arises that individual instances of application components should contain the same internal state, so that they present a unified behavior.
+          - The internal state maintained by application component instances is replicated among all instances. Only small portions of shared information are used, for example, a configuration file stored centrally or configurations send by clients with every request.
+        - Stateless Component
+          - State is handled external of application components to ease their scaling-out and to make the application more tolerant to component failures.
+          -  can elasticity and robustness of an application component be increased?
+          - The components of a Distributed Application are deployed among multiple cloud resources to benefit from this distributed runtime environment through scaling out.The most significant factor complicating addition and removal of component instances in this scope is the internal state maintained by them. In case of failure, this information may even be lost.
+          - Application components are implemented in a fashion that they do not have an internal state. Instead, their state and configuration is stored externally in Storage Offerings or provided to the component with each request.
+        - User Interface Component
+          - Interactive synchronous access to applications is provided to humans, while application-internal interaction is realized asynchronously when possible to ensure Loose Coupling. Furthermore, the user interface should be customizable to be used by different customers.
+          - How can User Interface Components be accessed interactively by humans while being configurable and decoupled from the remaining application?
+          - User Interface Component instances part of a Distributed Application have to be added and removed easily from the application without affecting the user experience. The dependencies on other application components should, therefore, be reduced as much as possible.
+          - The User Interface Component serves as a bridge between the synchronous access of the human user and the asynchronous communication used with other application components. State information held externally, as described by the Stateless Component pattern. It is, therefore, attached to requests, may be held in a part of the user interface that is deployed on the user’s access device, or may be obtained from external storage. Instances of User Interface Components are scaled based on the number of synchronous requests to is as described by the Elastic Load Balancer pattern.
+        - Processing Component
+          - Possibly long running processing functionality is handled by separate components to enable elastic scaling. Processing functionality is further made configurable to support different customer requirements.
+          - How can processing be scaled out elastically among distributed resources while being configurable regarding the supported functions to meet different customers’ requirements?
+          - The processing functionality offered by an application shall be handled by different application component instances that operate independently. Instances of these components have to be added and removed easily to the application as part of scaling operations.
+          - Processing functionality is split into separate function blocks and assigned to independent Processing Components. Each processing component is scaled out independently and is implemented in a stateless fashion as described in the Stateless Component pattern. Scaling is handled by an Elastic Queue. Data required for processing is provided with requests or by Storage Offerings.
+        - Batch Processing Component
+          - Requests are delayed until environmental conditions make their processing feasible.
+          - How can asynchronous processing requests be delayed to be handled when conditions for their processing are optimal?
+          - Distributed Applications assing processing functionality to different components to them independently. If such Processing Components are accessed asynchronously, certain conditions may make it unfeasible to process the requests immediately: seldom accesses to processing functionality, powerful Processing Component instances accessed continuously, and environmental conditions, such as resource costs.
+          - Asynchronous processing requests are accepted at all times, but stored them until conditions are optimal for their processing. Based on the number of stored requests, environmental conditions, and custom rules, components are instantiated to handle the requests. Requests are only processed under non-optimal conditions if they cannot be delayed any longer.
+        - Data Access Component
+          - Functionality to store and access data elements is provided by special components that isolate complexity of data access, enable additional data consistency, and ensure adjustability of handled data elements to meet different customer requirements.
+          - How can the complexity of data storage due to access protocols and data consistency be hidden and isolated while ensuring data structure configurability?
+          - Handling the complexity of accessing data, i.e., handling of authorization, querying for data, failure handling etc. tightly couples application components to the used storage offering and complicates the implementation of these components as a lot of the idiosyncrasies of data handling have to be respected by them. Instead, different data sources should be integrated to provide a unified data access to other application components. Also, data may be stored at different cloud providers that have to be integrated as well.
+          - Access to different data sources is integrated by a Data Access Component. This component coordinates all data manipulation. In case a storage offering shall be replaced or the interface of a storage offering changes, the Data Access Component is the only component that has to be adjusted.
+        - Data Abstractor
+          - The data provided to users or other application components is abstracted to inherently support eventually consistent data storage through the use of abstractions and approximations.
+          - How can eventually consistent data be presented, so that possible inconsistencies are hidden from other application components and application users?
+          - If a Distributed Application using eventually consistent Storage Offerings is designed for consistent data, data consistency could be reassured by application components, such as the Data Access Component. However, this can void the benefits introduced by eventually consistency regarding performance and availability.
+          - The style of data representation is adjusted to allow retrieved data to be eventually consistent. The data representation always reflects that the consistent state is unknown by approximating values or abstracting them into more general ones, such as progress bars, traffic lights, or change tendencies (increase / decrease).
+        - Idempotent Processor
+          - Application functions detect duplicate messages and inconsistent data or are designed to be immune to these conditions.
+          - How can an application component cope with message duplicates or data inconsistencies that could lead to duplicate function execution?
+          - In case of Storage Offerings displaying Eventual Consistency, application components can possibly read obsolete information that has already been processed. Still, the component may choose to process the data again as changes cannot be seen. The same problem arises, if application components of a Distributed Application exchange information asynchronously via a Message-oriented Middleware assuring At-least-once Delivery. In this case duplicate messages can lead to duplicate processing.
+          - The Idempotent Processor ensures that duplicate messages and inconsistent data do not affect application functionality either through inconsistency detection identifying message duplicates and data inconsistencies or through idempotent semantics of application functions enabling them to be erroneously executed multiple times with the same outcome.
+        - Transaction-based Processor
+          - Components receive messages or read data and process the obtained information under a transactional context to ensure that all received messages are processes and all altered data is consistent after processing, respectively.
+          - How can an application component ensure that all messages it receives are processed successfully and altered data is persisted successfully after processing?
+          - A Message-oriented Middleware can use Transaction-based Delivery of messages to ensure that messages are received successfully by a client. However, using this approach no assurances can be made regarding the processing of that received message.
+          - Transaction-based Delivery subsumes reading the message from a queue and deleting it from a queue in one transaction. The Transaction-based Processor extends the transactional context to the processing of the message in the receiver. Analogous, if interacting with a storage offering, the Transaction-based Processor reads, processes and writes data in one transactional context.
+        - Timeout-based Message Processor
+          - Clients acknowledge message receptions and processing to ensure that all messages are handled by an application. If a message is not acknowledged after a certain timeout, it is processed by a different client.
+          - How can an application process messages while guaranteeing that all messages handled by the application are processed at-least-once?
+          - A Message-oriented Middleware uses Timeout-based Delivery to ensure that messages are received successfully by at least one client. Additionally, it shall be assured by the application that a message has also been properly processed after its reception.
+          - Instead of sending an acknowledgement right after receiving a message, a timeout-based message processor sends this acknowledgement after it has successfully processed the message.
+        - Multi-Component Image
+          - Virtual servers host multiple application components that may not be active at all times to reduce provisioning and decommissioning operations.
+          - How can a virtual server provide the functionality of multiple application components to be used flexibly in applications?
+          - A Distributed Application may deploy its application components among virtual servers provided by an Elastic Infrastructure. The individual application components may, however, not fully utilize the servers if only one component is hosted per server. Therefore, mapping each application component to a single server may lead to underutilization.
+          - Multiple application components (possibly including middleware) are hosted on a single virtual server to ensure that running virtual servers may be used for different purposes without making provisioning or decommissioning operations necessary.
+      - Multi-Tenancy
+        - Patterns of this category describe how cloud application can be shared between different customers if the application itself is offered as a service.
+        - Shared Component
+          - A component is accessed by multiple tenants to leverage economies of scale.
+          - How can an application component be shared between multiple tenants enabling some individual configuration?
+          - A Distributed Application is offered to multiple tenants. These tenants share IT resources required by applications provided to them. The provisioning of application component instances shall be optimized by limiting the portion of the application stack and the number of application components deployed exclusively for one tenant.
+          - A Shared Component provides functionality that is equal for all tenants accessing the component. All tenants can be treated as a uniform user group to which a common user experience and service level is guaranteed.
+        - Tenant-isolated Component
+          - A component shared between tenants avoids influences between tenants regarding assured performance, available storage capacity, and accessibility of functionality and data.
+          - How can an application component be shared between multiple tenants enabling individual configuration and tenant-isolation regarding performance, data volume, and access privileges?
+          - A Distributed Application is offered to multiple tenants. These tenants share IT resources required by applications provided to them. However, the sharing of application components is hindered by three factors. First, tenants may have unique requirements and, thus, expect application components to be configurable to their individual needs. Second, tenants may not trust each other. Third, tenants expect an application to behave as if a single tenant was the only one accessing it.
+          - Components on all layers of the application stack are specifically developed to be used by different tenants. Especially, they ensure isolation between tenants by controlling tenant access, processing performance used, and separation of stored data.
+        - Dedicated Component
+          - Components providing critical functionality shall be provided exclusively to tenants while still allowing other components to be shared between tenants.
+          - How can application components that cannot be shared be integrated into a multi-tenant application?
+          - A Distributed Application is offered to multiple tenants. These tenants share IT resources required by applications provided to them.
+          - Dedicated application components are provided exclusively for each tenant using the application.
+      - Cloud Integration
+        - Patterns of this category describe how applications distributed among multiple hosting environments can be integrated to provide a holistic user experience. This is especially relevant in a Hybrid Cloud.
+        - Restricted Data Access Component
+          - Data provided to clients from different environments is adjusted based on access restrictions.
+          - How can an application component alter provided data based on access restrictions imposed on different environments?
+          - A Distributed Application may host application components at different providers to match the individual requirements of components with best fitting providers. One factor may be that application components experience different workload. Other differentiating factors of the used environments may be assured privacy, security, and trust. These differences may, however, impact the data that may be accessible in an environment.
+          - Data storage restrictions and access privileges are defined for each data element. Access to these data elements is provided by separate Restricted Data Access Components that interpret the information associated with data elements. It adjusts data accordingly through deletion or obfuscation during every access.
+        - Message Mover
+          - Messages are moved automatically between different cloud providers to provide unified access to application components using messaging.
+          - How can message queues of different providers be integrated without an impact on the application components using them?
+          - The application components comprising a Distributed Application often exchange data using messages. If used message queues reside in different cloud environments that form a Hybrid Cloud accessibility to queues of one environment may be restricted for application components that are deployed in another environment.
+          - A Message Mover is used to integrate message queues hosted in different environments by receiving messages from one queue and transferring it to a queue in other environments.
+        - Application Component Proxy
+          - An application component is made available in an environment from where it cannot be accessed directly by deploying an Application Component Proxy. The communication between this proxy and the application component is initiated and maintained from the environment where communication is unrestricted.
+          - How can an application component be accessed if direct access to its hosting environment is restricted?
+          - Application components of a Distributed Application are deployed in different Cloud Environments that form a Hybrid Cloud. These environments often have different privacy, security, and trust properties. The communication between environments is often restricted through the use of firewalls. However, application components hosted in unrestricted environments may have to access application components hosted in a restricted environment.
+          - The interface of a restricted application component is duplicated to form a proxy component. Synchronous and asynchronous communication with this proxy component is initiated and maintained from the restricted environment that may access the unrestricted environment directly.
+        - Compliant Data Replication
+          - Data is replicated among multiple environments that may handle different data subsets. During replication data is obfuscated and deleted depending on laws and security regulations. Data updates are adjusted automatically to reflect the different data structures handled by environments.
+          - How can data be replicated between environments if some environments may only handle subsets of the data due to laws and corporate regulations?
+          - Distributed Applications that are hosted in a Hybrid Cloud often require access to the same data from different application components. If application components accessing the data are globally distributed, data access performance may be reduced drastically if data is only stored in one geographic location. Therefore, data may have to be replicated. Due to laws and corporate regulations, some of these locations may only handle a subset of the available data or data has to be obfuscated.
+          - Data replicas in different environments are updated asynchronously using messaging. Message filters are used to delete and obfuscate certain data elements in these messages as they leave the trusted environment. Information about the data manipulations stored in a storage offering. If data is then altered in the less secure environment, the corresponding update message is enriched by a message enricher as it enters the secure environment.
+        - Integration Provider
+          - Integration functionality such as messaging and shared data is hosted by a separate provider to enable integrate of otherwise separated hosting environments.
+          - How can application components that reside in different environments, possibly belonging to different companies, be integrated through a third-party provider?
+          - When companies collaborate or one company has to integrate applications of different regional offices, different applications or the components of a Distributed Application are distributed among different hosting environments. Communication between these environments may be restricted and enabling communication may be hindered by corporate regulations.
+          - The Distributed Applications or their components communicate using integration components offered by a third party provider.
+    - Cloud Application Management
+      - Patterns of this category describe how cloud applications can be managed automatically by separate components.
+      - Management Components
+        - Patterns of this category describe how management functionality can be integrated with components providing application functionality.
+        - Provider Adapter
+          - Provider interfaces are encapsulated and mapped to unified interfaces used in applications to separate concerns of interactions with the provider from application functionality.
+          - How can the dependencies of an application component on a provider-specific interface be managed?
+          - Cloud providers offer many interfaces that can be used in application components of a Distributed Application. If a component directly interacts with these interfaces, its implementation becomes strongly interleaved with the specific functions offered and the protocols used.
+          - The Provider Adapter encapsulates all provider-specific implementations required for authentication, data formatting etc. in an abstract interface. The Provider Adapter, thus, ensures separation of concerns between application components accessing provider functionality and application components providing application functionality. It may also offer synchronous provider-interfaces to be accessed asynchronously via messages and vice versa.
+        - Managed Configuration
+          - Scaled-out application components should use a centrally stored configuration to provide a unified behavior that can be adjusted simultaneously.
+          - How can the configuration of scaled out application component instances be controlled in a coordinated fashion?
+          - Application components of a Distributed Application often have configuration parameters. Storing configuration information together with the application component implementation can be unpractical as it results in more overhead in case of configuration changes. Each running instance of the application component must be updated separately. Component images stored in Elastic Infrastructures or Elastic Platforms also have to be updated upon configuration change.
+          - Configurations are stored in a central Storage Offering, commonly, a Relational Database, Key-Value Storage, or Blob Storage from where it is accessed by all running component instances either by accessing the storage periodically or by sending messages to the components.
+        - Elasticity Manager
+          - The utilization of IT resources on which an elastically scaled-out application is hosted, for example, virtual servers is used to determine the number of required application component instances.
+          - How can the number of required application component instances be determined based on the utilization of hosting IT resources?
+          - Application components of a Distributed Application hosted on an Elastic Infrastructure or Elastic Platform shall be scaled-out. The instances of applications components, thus, shall be provisioned and decommissioned automatically based on the current workload experienced by the application.
+          - The utilization of cloud resources on which application component instances are deployed is monitored. This could be, for example, the CPU load of a virtual server. This information is used to determine the number of required instances.
+        - Elastic Load Balancer
+          - The number of synchronous accesses to an elastically scaled-out application is used to determine the number of required application component instances.
+          - How can the number of required application component instances be determined based on monitored synchronous accesses?
+          - Application components of a Distributed Application shall be scaled out automatically. Requests sent to an application shall be used as an indicator for the currently experienced workload from which the required number of components instances shall be deducted.
+          - Based on the number of synchronous requests handled by a load balancer and possibly other utilization information, the required number of required component instances is determined.
+        - Elastic Queue
+          - The number of asynchronous accesses via messaging to an elastically scaled-out application is used to adjust the number of required application component instances.
+          - How can the number of required application component instances be adjusted based on monitored asynchronous accesses?
+          - A Distributed Application is comprised of multiple application components that are accessed asynchronously and deployed to an Elastic Infrastructure or an Elastic Platform. The required provisioning and decommissioning operations to scale this application should be performed in an automated fashion.
+          - Queues that are used to distribute asynchronous requests among multiple application components instances are monitored. Based on the number of enqueued messages the Elastic Queue adjusts the number of application component instances handling these requests.
+        - Watchdog
+          - Applications cope with failures automatically by monitoring and replacing application component instances if the provider-assured availability is insufficient.
+          - How can applications automatically detect failing application components and handle their replacement?
+          - If a Distributed Application is comprised of many application components it is dependent on the availability of all component instances. To enable high availability under such conditions, applications have to rely on redundant application component instances and the failure of these instances has to be detected and coped with automatically.
+          - Individual application components rely on external state information by implementing the Stateless Component pattern. Components are scaled out and multiple instances of them are deployed to redundant resources. The component instances are monitored by a separate Watchdog component and replaced in case of failures.
+      - Management Processes
+        - Patterns of this category describe how distributed and componentized cloud applications may address runtime challenges, such as elasticity and failure handling in an automated fashion.
+        - Elasticity Management Process
+          - Application component instances are added automatically to an application to cope with increasing workload. If the workload decreases application component instances are removed respectively.
+          - How can the number of resources to which application components are scaled-out be adjusted efficiently to the currently experienced workload and anticipated future workload?
+          - A Distributed Application uses Elasticity Managers, Elastic Queues, or Elastic Load Balancers to ensure an elastic scaling of application components. To handle this task adequately, the current resource demand has to be obtained automatically from the application and has to be reflected in provisioning and decommissioning of cloud resources.
+          - An Elasticity Management Process analyzes the utilization of application component instances in intervals, when a system manager requests it, or if certain conditions are observed by the monitoring component. Based on this information, the current workload of the application is computed and reflected by adjusting used resources.
+        - Feature Flag Management Process
+          - If the cloud cannot provide required resources in time, the features provided by application components are degraded gracefully to replace or disable unimportant ones in order to keep vital features operational.
+          - How can the performance of an application degrade gracefully, if the experienced workload increases but additional cloud resources are unavailable or take too long to provision?
+          - While the elasticity of clouds generally allows a tight alignment of resource numbers to the experienced workload, the time it takes to provision new resources remains as a limiting factor. If the workload increases too drastically, it may take too long to provision new resources. Furthermore, cloud providers often do not guarantee concrete provisioning times.
+          - Less important application functionality provided by application component instances is disabled or replaced with a less demanding implementation, if the cloud provider cannot fulfill current workload demands. When resources can eventually be provisioned again, the application components return to normal operation.
+        - Update Transition Process
+          - When a new application component version, middleware versions etc. become available, running application components are updated seamlessly.
+          - How can application components of a Distributed Application be updated seamlessly?
+          - During the runtime of a Distributed Application, new versions of used middleware, operating systems, or application components may become available. A seamless switch from the old to the new version of application components shall be enabled.
+          - The new component version is created. Additional application component instances of the new version are provisioned. These components are executed simultaneously with the application components of the old version. If necessary, load balancing is then switched to the component instances of the new version. If the application components access a queue, this step is unnecessary. Finally, the old application component instances are decommissioned.
+        - Standby Pooling Process
+          - Application component instances should be kept on standby to increase provisioning speed and utilize billing time-slots efficiently.
+          - How can defined provisioning times for application component instances be ensured while utilizing pay-per-use resources in an optimal fashion?
+          - Even though application component instances may be provisioned and decommissioned dynamically, it usually requires some time to actually provision and decommission them. If a cloud application, however, experiences drastic and quick workload changes, these provisioning times may limit its capability to obtain the required resources quickly enough. Decommissioning of component instances immediately when no longer needed may also be ineffective, if cloud resources are charged for fixed time-slots.
+          - Instead of decommissioning application component instances instantly when they are unused, they are assigned to a standby list They are decommissioned only when the time-slot they have been paid for has been utilized and they are still not needed. The standby list may always contain a certain number of component instances to ensure timely provisioning.
+        - Resiliency Management Process
+          - Application components are checked for failures and replaced automatically without human intervention.
+          - How can the overall availability of an application be ensured automatically even if individual application component instances fail?
+          - A Watchdog allows to monitor application components and react to failures. To handle this task, the component functionality must be verified and failing components must be replaced with newly provisioned components in a coordinated fashion.
+          - This process is triggered by the monitoring functionality or by the Watchdog if it detects a component failure. Additionally, the Resiliency Management Process periodically verifies application component health. If a failure is detected, the faulty application component instance is decommissioned and replaced by a newly provisioned instance.
+    - Composite Cloud Applications
+      - Patterns of this category describe applications composed out of multiple cloud computing patterns.
+      - Native Cloud Applications
+        - Patterns of this category describe fundamental composite cloud applications.
+        - Two-Tier Cloud Application
+          - Presentation and business logic is bundled to one stateless tier that is easy to scale. This tier is separated from the data tier that is harder to scale and often handled by a provider-supplied storage offering.
+          - How can application functionality be separated from data handling to scale them independently?
+          - A Distributed Application is decomposed into application components to scale individual application functions independently. In this scope, data handling functionality is significantly harder to scale than Stateless Components, because Stateful Components have to coordinate state information between instances. Therefore, the application shall be decomposed in a fashion that separates the easy-to-scale functionality from the hard-to-scale functionality.
+          - Application functionality is decomposed into data handling functionality, provided by one or several Storage Offerings, and application components handling presentation and business logic. This separation enables the two tiers to elastically scale independently with their workloads.
+        - Three-Tier Cloud Application
+          - The presentation, business logic, and data handling is realized as separate tiers to scale stateless presentation and compute-intensive processing independently of the data tier, which is harder to scale and often handled by the cloud provider.
+          - How can presentation logic, business logic, and data handling be decomposed into separate tiers that are scaled independently?
+          - A Distributed Application is decomposed into application components to scale individual application functions independently. There can be many differentiating factors of application tiers. For example, if Processing Components are more computation intensive or are used less frequently than User Interface Components, aligning the elastic scaling of these two components by summarizing their implementation in one tier can be inefficient. This issue arises every time components experiences different Application Workloads. The number of provisioned component instances cannot be aligned well to the different workloads if they are summarized to coarse grained tiers.
+          - The application is decomposed into three tiers, where each tier is elastically scaled independently. The presentation tier is comprised of a load balancer and an application component that implements the Stateless Component pattern and User Interface Component pattern. The business logic tier is comprised of an application component implementing the Stateless Component pattern in addition to the Processing Component pattern.
+        - Content Distribution Network
+          - Applications component instances and data handled by them are globally distributed to meet the access performance required by a global user group.
+          - How can timely access to an application be ensured for a globally distributed user group?
+          - If the application provides multimedia content to users, for example, streamed videos and music the amount of data to be served increases drastically. If such multimedia content is located too far from the user accessing it, the communication delay of the distribution network may hinder the timely access to data. Therefore, storing content in only one centralized location, i.e., one cloud or data center is unfeasible.
+          - Content replicas are established in different physical locations of one or multiple clouds. During this distribution of replicas, the topology of distribution networks is considered to ensure locality for all users. Replicas are updated from a central location.
+      - Hybrid Cloud Applications
+        - Patterns of this category describe applications providing concrete functionality as well as the distribution of application components in a Hybrid Cloud setup.
+        - Hybrid User Interface
+          - Varying workload from a user group interacting asynchronously with an application is handled in an elastic environment while the remainder of an application resides in a static environment.
+          - How can a user interface for asynchronous interaction be hosted in a cloud while being integrated with an application otherwise hosted in a static data center?
+          - An application serves user groups with different workload behavior. One user group generates Static Workload, while another user group generates Periodic Workload, Once-in-a-lifetime Workload, Unpredictable Workload, or Continuously Changing Workload. Since the predictability of the user group size and workload behavior differs, it shall be ensured that unexpected peak workloads do not affect the performance of the application while each user group is handled by the most suitable cloud environment.
+          - The User Interface Component serving users generating varying workload is hosted in an elastic cloud environment. Other application components that are hosted in a static environment. The user interface deployed in the elastic cloud is integrated with the remainder of the application in a decoupled fashion using messaging to ensure Loose Coupling.
+        - Hybrid Processing
+          - Processing functionality that experiences varying workload is hosted in an elastic cloud while the remainder of an application resides in a static environment.
+          - How can Processing Components that experiences varying workload be hosted in an elastic cloud while the remainder of an application is hosted in a static data center?
+          - A Distributed Application provides processing functionality that experience different workload behavior. The user group accessing the application is, thus, predictable in size, but accesses the functions provided by the application differently. While most of the functions are used equally over time and, therefore, experience Static Workload, some Processing Components experience Periodic Workload, Unpredictable Workload, or Continuously Changing Workload.
+          - The Processing Components experiencing varying workloads are provisioned in an elastic cloud. Loose Coupling is ensured by exchanging information between the hosting environments asynchronously via messages.
+        - Hybrid Data
+          - Data of varying size is hosted in an elastic cloud while the remainder of an application resides in a static environment.
+          - How can a data handling functionality that experiences varying workload be hosted in an elastic cloud while the rest of the application is located in a static data center?
+          - A Distributed Application handles data whose size varies drastically over time. Large amounts of data may, thus, be generated periodically and are then deleted again, may increase and decrease randomly, or may display a general increase or decrease over time. Especially, during these changes, the user number and their accesses to the application can be static resulting in Static Workload on the remainder of the application components.
+          - Data whose varying size makes it unsuitable for hosting in a static environment is handled by Storage Offerings in an elastic cloud. At this location data is either accessed by Data Access Components that are hosted in the static environment or by Data Access Components hosted in the elastic environment.
+        - Hybrid Backup
+          - Data is periodically extracted from an application to be archived in an elastic cloud for disaster recovery purposes.
+          - How can data be archived in a remote environment while the remainder of the application is hosted in a static environment?
+          - Many applications are used by small and medium businesses which do not have the required IT skills to host and maintain their own highly available infrastructure. Especially, requirements regarding business resiliency - the ability to recover from an error - and business continuity - the ability to operate during an error - are challenging. Furthermore, there are laws and regulations making businesses liable to archive data and keep it accessible for audits, often over very long periods of time.
+          - A Distributed Application is hosted in a local static environment of the company. Data handled by Stateful Components is periodically extracted and replicated to a cloud storage offering.
+        - Hybrid Backend
+          - Backend functionality comprised of data intensive processing and data storage is experiencing varying workloads and is hosted in an elastic cloud while the rest of an application is hosted in a static data center.
+          - How can Processing Components that experience varying workload and need access to large amounts of data be hosted in an elastic environment while the remainder of the application is hosted in a static environment?
+          - A Distributed Application provides processing functionality that experiences varying workload behavior. Mainly, Static Workload has to be handled, but some Processing Components experience Periodic Workload, Unpredictable Workload, or Continuously Changing Workload. Application components providing the respective processing functionality experiencing varying workload should, therefore, be hosted in an elastic environment. However, these components have to access large amounts of data during their execution making them highly dependent on the availability and the timely access to such data.
+          - The Processing Components experiencing varying workloads are hosted in an elastic cloud together with the data accessed during their operation. Processing Components in the elastic cloud are triggered from the static environment through asynchronous messages exchanged via message queues provided by a Message-oriented Middleware. A Data Access Component in the static environment ensures that data required by elastic Processing Components is stored in Storage Offerings The location where this data is stored may then be passed to the elastic Processing Components during their enactment via messages. Data that is not required by the backend functionality may still be stored in Stateful Components hosted in the static data center.
+        - Hybrid Application Functions
+          - Some application functionality provided by user interfaces, processing, and data handling is experiencing varying workload and is hosted in an elastic cloud while other application functionality of the same type is hosted in a static environment.
+          - How can arbitrary functionality of an application be distributed among static data centers and elastic clouds best matching its requirements?
+          - Application components comprising a Distributed Application experience varying workloads on all layers of the application stack: User Interface Components, Processing Components, and Data Access Components. All of these components provide functionality to the user group of the application, but this user group accesses functionality differently. In addition to the workload requirements other issues, such as legal and corporate regulations or requirements on security, privacy, and trust may limit the environments to which an application component may be provisioned.
+          - Application components are grouped regarding similar requirements and are deployed into best fitting environments. Interdependencies between the components are reduced by exchanging data using asynchronous messaging to ensure Loose Coupling. Depending on the accessed function, a load balancer redirects user accesses to the different environments seamlessly.
+        - Hybrid Multimedia Web Application
+          - Website content is largely provided from a static environment. Multimedia files that cannot be cached efficiently are provided from a large distributed elastic environment for high-performance access.
+          - How can non-cacheable content be integrated efficiently in a website that is accessed by a large globally distributed user group?
+          - A Distributed Application provides a website accessed by a large globally distributed user group. While most of the website is comprised of static content, there is also a significant amount of multimedia content, such as videos or music that has to be streamed to users.
+          - Static website content is hosted in a static environment from where it is accessed by users. The streaming content is provided by an elastic cloud environment where it is accessed from the application’s User Interface Component. The static content is provided to users’ client software and in this static content, the multimedia content is referenced. Retrieval of this streaming content is often handled directly by the users’ browser software.
+        - Hybrid Development Environment
+          - A production runtime environment is replicated and mocked in an elastic environment where new applications can be developed and tested.
+          - How can an application use different computing environments during its development, test, and production stages?
+          - Applications have different requirements on the runtime environment during their development, test, and production phase. During development, hardware requirements are often uncertain, so hardware resources should be flexible to extend resources if necessary. During the test phase, diverse test systems may be needed to verify the proper functioning of the application on different operating systems or when being accessed using different client software, i.e., different browsers. Large numbers of resources may also be required to perform load tests. During the productive use other factors, such as security and availability may be of greater importance than resource flexibility.
+          - The production environment of the application is simulated in the development and test environment through the use of equivalent addressing, similar mocking data, and equivalent functionality provided by the environment. Migration of developed applications is ensured through transformation of application components or compatibility of runtimes. Some testing resources are provided exclusively in the development environment to verify the application behavior under different circumstances.
+  - Cloud Architecture Qualities
+    - Availability
+      - Availability is the proportion of time that the system is functional and working, usually measured as a percentage of uptime. It can be affected by system errors, infrastructure problems, malicious attacks, and system load. Cloud applications typically provide users with a service level agreement (SLA), so applications must be designed to maximize availability.
+    - Data Management
+      - Data management is the key element of cloud applications, and influences most of the quality attributes. Data is typically hosted in different locations and across multiple servers for reasons such as performance, scalability or availability, and this can present a range of challenges. For example, data consistency must be maintained, and data will typically need to be synchronized across different locations.
+    - Design and Implementation
+      - Good design encompasses factors such as consistency and coherence in component design and deployment, maintainability to simplify administration and development, and reusability to allow components and subsystems to be used in other applications and in other scenarios. Decisions made during the design and implementation phase have a huge impact on the quality and the total cost of ownership of cloud hosted applications and services.
+    - Messaging
+      - The distributed nature of cloud applications requires a messaging infrastructure that connects the components and services, ideally in a loosely coupled manner in order to maximize scalability. Asynchronous messaging is widely used, and provides many benefits, but also brings challenges such as the ordering of messages, poison message management, idempotency, and more
+    - Management and Monitoring
+      - Cloud applications run in in a remote datacenter where you do not have full control of the infrastructure or, in some cases, the operating system. This can make management and monitoring more difficult than an on-premises deployment. Applications must expose runtime information that administrators and operators can use to manage and monitor the system, as well as supporting changing business requirements and customization without requiring the application to be stopped or redeployed.
+    - Performance and Scalability
+      - Performance is an indication of the responsiveness of a system to execute any action within a given time interval, while scalability is ability of a system either to handle increases in load without impact on performance or for the available resources to be readily increased. Cloud applications typically encounter variable workloads and peaks in activity. Predicting these, especially in a multi-tenant scenario, is almost impossible. Instead, applications should be able to scale out within limits to meet peaks in demand, and scale in when demand decreases. Scalability concerns not just compute instances, but other elements such as data storage, messaging infrastructure, and more.
+    - Resiliency
+      - Resiliency is the ability of a system to gracefully handle and recover from failures. The nature of cloud hosting, where applications are often multi-tenant, use shared platform services, compete for resources and bandwidth, communicate over the Internet, and run on commodity hardware means there is an increased likelihood that both transient and more permanent faults will arise. Detecting failures, and recovering quickly and efficiently, is necessary to maintain resiliency.
+    - Security
+      - Security is the capability of a system to prevent malicious or accidental actions outside of the designed usage, and to prevent disclosure or loss of information. Cloud applications are exposed on the Internet outside trusted on-premises boundaries, are often open to the public, and may serve untrusted users. Applications must be designed and deployed in a way that protects them from malicious attacks, restricts access to only approved users, and protects sensitive data.
+  - Cloud Architecture Patterns
+    - Ambassador
+      - Create helper services that send network requests on behalf of a consumer service or application.
+    - Anti-Corruption Layer
+      - Implement a façade or adapter layer between a modern application and a legacy system.
+    - Backends for Frontends
+      - Create separate backend services to be consumed by specific frontend applications or interfaces.
+    - Bulkhead
+      - Isolate elements of an application into pools so that if one fails, the others will continue to function.
+    - Cache-Aside
+      - Load data on demand into a cache from a data store
+    - Circuit Breaker
+      - Handle faults that might take a variable amount of time to fix when connecting to a remote service or resource.
+    - Claim Check
+      - Split a large message into a claim check and a payload to avoid overwhelming a message bus.
+    - Compensating Transaction
+      - Undo the work performed by a series of steps, which together define an eventually consistent operation.
+    - Competing Consumers
+      - Enable multiple concurrent consumers to process messages received on the same messaging channel.
+    - Compute Resource Consolidation
+      - Consolidate multiple tasks or operations into a single computational unit
+    - CQRS
+      - Segregate operations that read data from operations that update data by using separate interfaces.
+    - Event Sourcing
+       - Use an append-only store to record the full series of events that describe actions taken on data in a domain.
+    - External Configuration Store
+      - Move configuration information out of the application deployment package to a centralized location.
+    - Federated Identity
+      - Delegate authentication to an external identity provider.
+    - Gatekeeper
+      - Protect applications and services by using a dedicated host instance that acts as a broker between clients and the application or service, validates and sanitizes requests, and passes requests and data between them.
+    - Gateway Aggregation
+      - Use a gateway to aggregate multiple individual requests into a single request.
+    - Gateway Offloading
+      - Offload shared or specialized service functionality to a gateway proxy.
+    - Gateway Routing
+      - Route requests to multiple services using a single endpoint.
+    - Health Endpoint Monitoring
+      - Implement functional checks in an application that external tools can access through exposed endpoints at regular intervals.
+    - Index Table
+      - Create indexes over the fields in data stores that are frequently referenced by queries.
+    - Leader Election
+      - Coordinate the actions performed by a collection of collaborating task instances in a distributed application by electing one instance as the leader that assumes responsibility for managing the other instances.
+    - Materialized View
+      - Generate prepopulated views over the data in one or more data stores when the data isn't ideally formatted for required query operations.
+    - Pipes and Filters
+      - Break down a task that performs complex processing into a series of separate elements that can be reused.
+    - Priority Queue
+      - Prioritize requests sent to services so that requests with a higher priority are received and processed more quickly than those with a lower priority.
+    - Publisher/Subscriber
+      - Enable an application to announce events to multiple interested consumers aynchronously, without coupling the senders to the receivers.
+    - Queue-Based Load Leveling
+      - Use a queue that acts as a buffer between a task and a service that it invokes in order to smooth intermittent heavy loads.
+    - Retry
+      - Enable an application to handle anticipated, temporary failures when it tries to connect to a service or network resource by transparently retrying an operation that's previously failed.
+    - Scheduler Agent Supervisor
+      - Coordinate a set of actions across a distributed set of services and other remote resources.
+    - Sharding
+      - Divide a data store into a set of horizontal partitions or shards.
+    - Sidecar
+      - Deploy components of an application into a separate process or container to provide isolation and encapsulation.
+    - Static Content Hosting
+      - Deploy static content to a cloud-based storage service that can deliver them directly to the client.
+    - Strangler
+      - Incrementally migrate a legacy system by gradually replacing specific pieces of functionality with new applications and services.
+    - Throttling
+      - Control the consumption of resources used by an instance of an application, an individual tenant, or an entire service.
+    - Valet Key
+      - Use a token or key that provides clients with restricted direct access to a specific resource or service.
+  - Cloud Architecture Concepts
+    - Service Mesh
+      - Container orchestration framework.
+        - As more and more containers are added to an application’s infrastructure, a separate tool for monitoring and managing the set of containers - a container orchestration framework - becomes essential.
+      - Services and instances (Kubernetes pods).
+        - An instance is a single running copy of a microservice.
+        - Sometimes the instance is a single container; in Kubernetes, an instance is made up of a small group of interdependent containers (called a pod).
+        - Clients rarely access an instance or pod directly; rather they access a service, which is a set of identical instances or pods (replicas) that is scalable and fault‑tolerant.
+      - Sidecar proxy.
+        - A sidecar proxy runs alongside a single instance or pod.
+        - The purpose of the sidecar proxy is to route, or proxy, traffic to and from the container it runs alongside.
+        - The sidecar communicates with other sidecar proxies and is managed by the orchestration framework.
+        - Many service mesh implementations use a sidecar proxy to intercept and manage all ingress and egress traffic to the instance or pod.
+      - Service discovery.
+        - When an instance needs to interact with a different service, it needs to find - discover - a healthy, available instance of the other service.
+        - Typically, the instance performs a DNS lookup for this purpose.
+        - The container orchestration framework keeps a list of instances that are ready to receive requests and provides the interface for DNS queries.
+      - Load balancing.
+        - Most orchestration frameworks already provide Layer 4 (network) load balancing. 
+        - A service mesh implements more sophisticated Layer 7 (application) load balancing, with richer algorithms and more powerful traffic management.
+        - Load‑balancing parameters can be modified via API, making it possible to orchestrate blue‑green or canary deployments.
+      - Encryption.
+        - The service mesh can encrypt and decrypt requests and responses, removing that burden from each of the services.
+        - The service mesh can also improve performance by prioritizing the reuse of existing, persistent connections, which reduces the need for the computationally expensive creation of new ones.
+        - The most common implementation for encrypting traffic is mutual TLS (mTLS), where a public key infrastructure (PKI) generates and distributes certificates and keys for use by the sidecar proxies.
+      - Authentication and authorization.
+        - The service mesh can authorize and authenticate requests made from both outside and within the app, sending only validated requests to instances.
+      - Support for the circuit breaker pattern.
+        - The service mesh can support the circuit breaker pattern, which isolates unhealthy instances, then gradually brings them back into the healthy instance pool if warranted.
+    - API Gateway
+  - Solutions features
+    - Skaffold
+      - Remote development
+        - Skaffold doesn’t require you to run a local Kubernetes cluster (minikube or docker-for-desktop).
+        - It can build/push images locally with docker, and run them on the remote clusters (such as GKE).
+      - More remote development
+        - You actually don’t need to run a local docker either. Skaffold can do remote builds using services like Google Container Builder. Although it’ll be slow.
+      - Tag management
+        - In your Kubernetes manifests, you leave the image tags out in the “image:” field, and Skaffold automatically changes the manifests with the new tags as it rebuilds the images.
+      - Rebuild only what’s changed
+        - If your microservices are on separate directories, changing source code for one will not cause rebuild for all images.
+        - Skaffold understands which images have been impacted by the change.
+      - Cleanup on exit
+        - Terminating “skaffold dev” runs a routine that cleans up the deployed k8s resources.
+        - If this fails, you can run “skaffold delete” to clean up deployed artifacts.
+    - Bazel Build System
+      - Capabilities
+        - Incremental
+          - Rebuild time is proportional to what you changed
+        - Deterministic
+          - We can cache build results based on their inputs
+        - Hermetic
+          - allows features like remote execution, parallelization
+        - Composable
+          - Bazel plugins are like Unix pipes, allows novel chaining
+        - Universal
+          - Builds Android, iOS, web, backends, cloud services, and more
+        - Industrial grade
+          - Googlers have beat on this thing in every way
+    - Istio Service Mesh
+      - Capabilities
+        - traffic monitoring
+        - access control
+        - discovery
+        - security
+        - resiliency
+        - canary deployments
+        - fault injections
+        - tracing
+        - circuit breakers
+        - routing
+        - load balancing
+        - retries
+        - timeouts
+        - mirroring
+        - rate limiting
+      - Components
+        - Envoy
+          - Envoy is an open source extension and service proxy provider, built for cloud-extensive meshes. The Istio mesh creates an extendible proxy system through Envoy.
+        - Mixer
+          - The mixer is a part of the service mesh that helps in enforcing safety protocols, allowing access controls and implementing usage policies and works independently from the mesh.
+        - Pilot
+          - Pilot provides all the services for the Istio Envoy sidecars and allows for a more coherent traffic management system with high-level routing.
+      - Use Cases
+        - Finding and Recognizing Services
+          - It’s common for organizations to be unaware of which services are running in their infrastructure, which becomes worse for a microservices-based environment.
+          - Istio service mesh provides service-level visibility and telemetry that helps any organization be updated with service inventories and dependency analysis.
+        - Operation Reliability
+          - The telemetry data service tells you how well a service is performing, such as the time taken to respond to service requests, which resources were used, and how often they were used.
+          - This helps developers to spot issues and correct them before they cause any repercussions to the wider application environment.
+        - Structured Traffic Governance
+          - In the case that any organization thinks about sidelining or restricting specific content such as URLs or sub-URLs, the Istio service mesh allows for such arrangements for any range of traffic management systems.
+          - With Istio, this can be done without having to refactor the application by simply using the sidecar functionalities of Istio.
+          - This includes services within a specific mesh as well as the ingress and egress traffic that exits and enters the mesh.
+        - Safer Service-to-Service Communications
+          - As the Istio service mesh allows a secure universal service identity system, companies can use a mutually integrated TLS for service-to-service communications.
+          - This also allows users to add service-level authentication procedures employing either TLS or JSON Web Tokens (JWS).
+        - Systems for Trust-Based Access Control
+          - Instead of configuring access to mainframe systems based on common static attributes, such as user identities, IP addresses, or access control lists, service meshes like Istio allow for real-time hosting as well as using network telemetry on the data.
+          - For instance, users can draft and execute a safety policy that states that every service request can be accessed based on the purpose of the request or might even demand a Certificate Signing Request (CSR) that becomes a valid id should the requester pass a string of confirmatory checks.
+        - Measures for Drastic Times
+          - Service meshes are equipped with specific functions that perform fault injection procedures and test the resiliency of services.
+          - Istio service mesh can inject specific delays in the service responses to see how the application executes and responds to requesters as a whole component.
+          - Injecting delays is also a tried and true method of modern chaos engineering techniques that are used to raise the longevity and resilience of the systems against faulty situations.
+    - Programming Language
+      - JavaScript Engine
+        - Event Table
+        - Event Queue
+        - Event Loop
+        - Lexical Structure
+        - Expressions
+        - Types
+        - Variables
+        - Functions
+        - this
+        - Arrow Functions
+        - Loops
+        - Loops and Scope
+        - Arrays
+        - Template Literals
+        - Semicolons
+        - Strict Mode
+        - ECMAScript 6, 2016, 2017
+      - Golang
+    Runtime Environments
     - Node.js
       - The V8 JavaScript Engine
         - V8 provides the runtime environment in which JavaScript executes.
@@ -1172,6 +1829,7 @@
       - Async and Await
       - Closures
       - The Event Loop
+    - Go
   - Definitions
     - AJAX
       - Asynchronous JavaScript and XML (known as AJAX) is a term that describes a new approach to using multiple technologies together in order to enable web applications to make quick updates to the user interface without reloading the entire browser page.
@@ -1505,28 +2163,40 @@
       - Responding to Change Over Following a Plan
     - Principles
       - Customer satisfaction through early and continuous software delivery
+        - Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.
         - Customers are happier when they receive working software at regular intervals, rather than waiting extended periods of time between releases.
       - Accommodate changing requirements throughout the development process
+        - Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.
         - The ability to avoid delays when a requirement or feature request changes.
       - Frequent delivery of working software
+        - Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
         - Scrum accommodates this principle since the team operates in software sprints or iterations that ensure regular delivery of working software.
       - Collaboration between the business stakeholders and developers throughout the project
+        - Business people and developers must work together daily throughout the project.
         - Better decisions are made when the business and technical team are aligned.
       - Support, trust, and motivate the people involved
+        - Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.
         - Motivated teams are more likely to deliver their best work than unhappy teams.
       - Enable face-to-face interactions
+        - The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
         - Communication is more successful when development teams are co-located.
       - Working software is the primary measure of progress
+        - Working software is the primary measure of progress.
         - Delivering functional software to the customer is the ultimate factor that measures progress.
       - Agile processes to support a consistent development pace
+        - Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.
         - Teams establish a repeatable and maintainable speed at which they can deliver working software, and they repeat it with each release.
       - Attention to technical detail and design enhances agility
+        - Continuous attention to technical excellence and good design enhances agility.
         - The right skills and good design ensures the team can maintain the pace, constantly improve the product, and sustain change.
-      - Simplicity 
+      - Simplicity
+        - Simplicity--the art of maximizing the amount of work not done--is essential.
         - Develop just enough to get the job done for right now.
       - Self-organizing teams encourage great architectures, requirements, and designs
+        - The best architectures, requirements, and designs emerge from self-organizing teams.
         - Skilled and motivated team members who have decision-making power, take ownership, communicate regularly with other team members, and share ideas that deliver quality products.
       - Regular reflections on how to become more effective
+        - At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.
         - Self-improvement, process improvement, advancing skills, and techniques help team members work more efficiently.
     - Doing Agile vs. Being Agile
       - Doing Agile
@@ -1539,6 +2209,10 @@
         - Knowledge intuitive
         - Beliefs and values
         - Multiple truths possible
+    - Toffler's wave theory
+      - The First Wave is the settled agricultural society which prevailed in much of the world after the Neolithic Revolution, which replaced hunter-gatherer cultures.
+      - The Second Wave is Industrial Age society. The Second Wave began in Western Europe with the Industrial Revolution, and subsequently spread across the world. Key aspects of Second Wave society are the nuclear family, a factory-type education system and the corporation.
+      - The Third Wave is the post-industrial society. Toffler says that since the late 1950s most countries have been transitioning from a Second Wave society into a Third Wave society. He coined many words to describe it and mentions names invented by others, such as the Information Age.
     - Spiral Dynamics
       - The Emergent, Cyclical, DoubleHelix Model Of The Adult Human Biopsychosocial Systems.
       - Levels
@@ -1723,41 +2397,327 @@
     - SDG 17: Partnership for the Goals
       - Strengthen the means of implementation and revitalize the global partnership for sustainable development
   - Reactive Manifesto
+  - GitOps
+    - Git as the Source of Truth 
+      - Provisioning of resources and deployment of k8s is declarative
+      - Entire system state is under version control and described in a single Git repository   
+      - Operational changes are made by pull request (plus build & release pipelines)
+      - Diff tools detect any divergence and notify us via Slack alerts; and sync tools enable convergence
+      - Rollback and audit logs are also provided via Git  
+  -  Cloud Native Ecosystem
+    - Value Proposition
+      - Cloud native technologies empower organizations to build and run scalable applications in modern, dynamic environments such as public, private, and hybrid clouds.
+      - Containers, service meshes, microservices, immutable infrastructure, and declarative APIs exemplify this approach.
+      - These techniques enable loosely coupled systems that are resilient, manageable, and observable.
+      - Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
+      - The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendorneutral projects.
+    - Patterns
+    
+    1. CONTAINERIZATION
+          - Commonly done with Docker containers
+          - Any size application and dependencies (even PDP-11
+ code running on an emulator) can be containerized
+          - Over time, you should aspire towards splitting suitable
+ applications and writing future functionality as microservices
+2. CI/CD
+          - Setup Continuous Integration/Continuous Delivery
+ (CI/CD) so that changes to your source code
+ automatically result in a new container being
+ built, tested, and deployed to staging and
+ eventually, perhaps, to production
+          - Setup automated rollouts, roll backs and testing
+3. ORCHESTRATION &
+APPLICATION DEFINITION
+          - Kubernetes is the market-leading orchestration solution
+          - You should select a Certified Kubernetes Distribution,
+ Hosted Platform, or Installer: cncf.io/ck
+          - Helm Charts help you define, install, and upgrade
+ even the most complex Kubernetes application
+4. OBSERVABILITY & ANALYSIS
+          - Pick solutions for monitoring, logging and tracing
+          - Consider CNCF projects Prometheus for monitoring,
+ Fluentd for logging and Jaeger for Tracing
+          - For tracing, look for an OpenTracing-compatible
+ implementation like Jaeger
+5. SERVICE PROXY, DISCOVERY, & MESH
+          - CoreDNS is a fast and flexible tool that
+ is useful for service discovery
+          - Envoy and Linkerd each enable service
+ mesh architectures
+          - They offer health checking, routing,
+ and load balancing
+7. DISTRIBUTED DATABASE & STORAGE
+When you need more resiliency and scalability than
+you can get from a single database, Vitess is a good
+option for running MySQL at scale through sharding.
+Rook is a storage orchestrator that integrates a
+diverse set of storage solutions into Kubernetes.
+Serving as the "brain" of Kubernetes, etcd provides a
+reliable way to store data across a cluster of machines.
+9. CONTAINER REGISTRY & RUNTIME
+Harbor is a registry that stores, signs, and scans content.
+You can use alternative container runtimes. The most common,
+all of which are OCI-compliant, are containerd, rkt and CRI-O. 
+8. STREAMING & MESSAGING
+When you need higher performance than JSON-REST, consider
+using gRPC or NATS. gRPC is a universal RPC framework. NATS is
+a multi-modal messaging system that includes request/reply,
+pub/sub and load balanced queues.
+6. NETWORKING
+To enable more flexible networking,
+use a CNI-compliant network project
+like Calico, Flannel, or Weave Net.
+10. SOFTWARE DISTRIBUTION
+If you need to do secure software distribution,
+evaluate Notary, an implementation of The
+Update Framework.
 
-
-Uncle Bob’s clean Architecture
-
-![Uncle Bob’s clean Architecture](https://cdn-images-1.medium.com/max/1400/1*D1EvAeK74Gry46JMZM4oOQ.png)
-
-Separation of concerns
-
-![Separation of concerns](https://cdn-images-1.medium.com/max/1400/0*JD606Sqx6RYZLKdu.)
-
-Entities layer reused in multiple applications
-
-![Entities layer reused in multiple applications](https://cdn-images-1.medium.com/max/800/1*yvvxfbLwUcmOqr7jvba86Q.png)
-
-Mobile Client Examples
-
-![Mobile Client Example](https://camo.githubusercontent.com/a7db43737e1ea0578d0dad6094f3728acc2adfab/68747470733a2f2f692d6d73646e2e7365632e732d6d7366742e636f6d2f64796e696d672f49433335313030372e706e67)
-
-Technical Debt
-
-![Technical Debt](https://www.chudovo.com/Content/Images/Blog/CleanCode/why-clean-code.png)
-
-Test Pyramid
-
-![Test Pyramid](images/test-pyramid.jpg)
-
-Acceptance Test-Driven Development
-
-![Acceptance Test-Driven Development](https://toolsqa.com/wp-content/uploads/2017/03/ATDD-Acceptance-test-driven-development.png)
-
-ATDD Cycle
-
-![ATDD Cycle](https://www.beeva.com/wp-content/uploads/2016/01/Flujo-atdd-tdd.png)
-
-ATDD Process
-
-![ATDD Process](images/ATDD-process.jpg)
-
+  - Blockchain Landscape
+    - Bitcoin
+      - The Bitcoin protocol allows users to exchange of the Bitcoin (BTC) cryptocurrency without any trusted third party using the decentralized, peer-to-peer Bitcoin network.
+      - The record of the transfer is maintained in a public blockchain, also known as the Bitcoin blockchain.
+      - The blockchain is replicated on every node that participates in the Bitcoin network.
+    - Bitcoin Blockchain Features
+      - The Bitcoin Blockchain is the shared ledger, which can be read and modified by all involved participants in the blockchain.
+      - Public ledger
+        - Any node with a Bitcoin client can read or add transactions to the ledger.
+      - Permissionless entry
+        - The miner who has solved the Proof-of-Work is the node that will finalize a block representing a set of transactions in the ledger.
+        - Any node can be a miner by solving the PoW puzzle successfully.
+      - Proof-of-Work
+        - Bitcoin uses the computation of the hash with a certain difficulty level as a Proof-of-Work measure.
+      - Customizable fields
+        - The structure of the blockchain is fixed. Each block has a number of transactions with some meta-data where the user can add some information.
+      - Native token
+        - The native token of the Bitcoin blockchain is the Bitcoin, which is also the cryptocurrency that is moved between users.
+        - Bitcoins and transaction fees in Bitcoins are awarded to the miner mining a particular block.
+    - The Blockchain
+      - While Bitcoin used the blockchain to implement a cryptocurrency system, it can be generically applied in other scenarios, with or without using a native token.
+      - The blockchain offers several features that make it an enabler for new applications that were either tedious or impossible to implement in its absence.
+    - Blockchain features
+      - Cryptographic guarantees
+        - All transactions on the blockchain are signed by end-users. This cryptographic guarantee allows for verification of the transaction with the user’s public key.
+        - Signing guarantees the authenticity, integrity and non-repudiation of that transaction.
+      - Pseudonymity
+        - Each entity within the blockchain network transacts with a generated address, which does not reveal the real identity of the user.
+        - This allows a certain amount of privacy on all transactions.
+      - Immutability
+        - The transaction broadcasted to the blockchain network has to be confirmed and included as part of the distributed ledger.
+        - Once confirmed, the transaction cannot be changed and stays in the ledger forever.
+        - No entity can delete or rollback transactions once they are included as part of the distributed ledger.
+      - Shared Read and Write
+        - The blockchain is either public or private within a limited set of entities.
+        - All concerned participants have visibility into the blockchain and can independently verify any transaction within it.
+        - All participants can generate transactions that can be added to the shared ledger.
+      - Auditability and Transparency
+        - All transactions on the blockchain are validated and timestamped after the transaction is verified and included in the distributed ledger with distributed consensus.
+        - This accounts for a global truth that any node in the future can verify and no node in the network can change the data that is part of this distributed ledger.
+        - This improves accountability as well as transparency for the data that is included in the blockchain.
+      - Distributed ownership
+        - In case of public blockchains, no entity owns the blockchain but all of them can add to the ledger and validate transactions.
+        - In a consortium blockchain, all participants own the blockchain equally and they can change the ledger by a super-majority of votes or other forms of distributed consensus algorithms.
+    - Blockchain Platforms
+      - Bitcoin based meta-data platforms
+        - Designed to leverage the already adopted Bitcoin blockchain.
+        - These platforms allow for allotment and transfer of custom assets using the Bitcoin blockchain.
+      - Blockchain platforms for financial applications
+        - Also known as FinTech blockchain platforms, this category specifically targets applications within the financial domain.
+      - Smart contract platforms 
+        - These platforms mainly focus on applications that require complex logic beyond just expressing account balances and balance transfers as in the case of cryptocurrency transfers.
+      - Consortium/Enterprise platforms
+        - Target enterprises and consortiums that wish to take advantages of the blockchain, but in a more controlled manner. 
+        - These also typically use a distributed consensus protocol, getting completely rid of PoW and mining.
+      - Sidechain platforms
+        - Sidechain platforms allow for faster innovation without polluting the main Bitcoin blockchain or incurring its overhead.
+        - Sidechains allow for building alternate chains that operate via a two-way peg into the Bitcoin blockchain or as an anchored chain.
+    - Use Cases
+      - Transactions & Payment Services
+        - Wallets
+        - Merchant Transactions
+        - Smart Contracts
+        - International Payments & Remitances
+        - Cryptocurrencies
+      - Exchanges & Trading
+        - Prediction Markets
+        - Clearing & Settlement
+        - Marketplaces
+        - P2P Lending
+        - Crowdfunding Platforms & Tokenization
+        - Crypto-Exchange
+        - Crypto-Investment
+      - Identity, Authentication & Security
+        - Data & Document Autentification
+        - Security
+        - Digital Identity
+      - Enterprise blockchain solutions
+        - Financial Services
+        - Supply Chain
+        - Healthcare & Insurance
+        - Compliance
+      - Social, networks & games
+        - Games
+        - Social & Networks
+      - Ecosystem
+        - Mining
+        - Hardware & Data Storage
+        - Infrastructure & Application Development
+  - Cloud Native Landscape 
+    - App Definition and Development
+      - Database
+      - Streaming & Messaging
+      - Application Definition & Image Build
+      - Continuous Integration & Delivery
+    - Orchestration & Management
+      - Scheduling & Orchestration
+      - Coordination & Service Discovery
+      - Remote Procedure Call
+      - Service Proxy
+      - API Gateway
+      - Service Mesh
+    - Runtime
+      - Cloud-Native Storage
+      - Container Runtime
+      - Cloud-Native Network
+    - Provisioning
+      - Automation & Configuration
+      - Container Registry
+      - Security & Compliance
+      - Key Management
+    - Cloud
+      - Public
+    - Platform
+      - Certified Kubernetes - Distribution
+      - Certified Kubernetes - Hosted
+      - Certified Kubernetes - Installer
+      - PaaS/Container Service
+    - Observability and Analysis
+      - Monitoring
+      - Logging
+      - Tracing
+      - Chaos Engineering
+    - Special
+      - Kubernetes Certified Service Provider
+      - Kubernetes Training Partner
+  - Serverless Landscape
+    - Framework
+    - Security
+    - Platform
+      - Hosted
+      - Installable
+  - Deployment Strategies
+    - Recreate
+      - Terminate the old version and release the new one
+    - Ramped
+      - Release a new version on a rolling update fashion, one after the other
+    - Blue/Green
+      - Release a new version alongside the old version then switch traffic
+    - Canary
+      - Release a new version to a subset of users, then proceed to a full rollout
+    - A/B testing
+      - Release a new version to a subset of users in a precise way (HTTP headers, cookie, weight, etc.).
+      - This doesn’t come out of the box with Kubernetes, it imply extra work to setup a smarter loadbalancing system (Istio, Linkerd, Traeffik, custom nginx/haproxy, etc).
+    - Shadow
+      - Release a new version alongside the old version. Incoming traffic is mirrored to the new version and doesn't impact the response.
+  - Reactive programming
+    - Programming with asynchronous data streams
+  - Multicloud Strategy
+    - Avoid vendor lock-in
+      - Choose a portable software stack.
+        - "Organizations need to pick services and technology stacks that are available across different vendors and platforms," Andreas Grabner, DevOps activist at Dynatrace, told Datamation. "One of the reasons why Kubernetes, OpenShift and CloudFoundry are so popular is that they can run on all cloud stacks."
+      - Use containers.
+        - Along the same lines, deploying containers also makes workloads more portable. Because container technology packages an application together with all of its dependencies, it makes moving applications from one environment to another much easier.
+      - Learn about vendors' services before committing.
+        - Before putting a workload in a particular cloud, consider whether you'll be able to move that workload. Serverless services like Amazon Lambda and Microsoft Azure Functions offer benefits like faster development and deployment, but they also dramatically increase the possibility of vendor lock-in. Enterprises need to carefully weigh the potential benefits and risks.
+      - Avoid a siloed approach. Simply housing one workload on one cloud platform and another on a different platform is not utilizing a multicloud strategy to its full potential. Rather, businesses must ensure that these efforts are connected. This enables them to benefit from the flexibility and cost savings of moving workloads around as needed to meet unique business requirements.
+    - Optimize costs
+      - Match workloads to vendors.
+        - While public cloud vendors often offer similar prices for similar services, that isn’t always the case. Customers may be able to find better prices — or better services — by shopping around. It's always best to approach each new cloud project on a case-by-case basis.
+      - Adopt microservices architecture.
+        - For new, "cloud-first" applications, many organizations find that microservices architecture, which divides applications into very small pieces that can be reused for different projects, speeds development, decreasing overall costs. Often microservices applications also rely on serverless computing services, which can further reduce time and expenses. However, as already mentioned, the potential cost benefit of these services should be weighed against the risk of vendor lock-in.
+      - Consider a cloud services broker.
+        - For a large enterprise, the job of finding the right cloud vendor and service for each cloud workload could require a dedicated team. Cloud services brokers provide this service via software and/or consultants, and in some cases they may be less expensive than selecting the cloud service provider yourself. In addition, some brokers also offer integration or management services that can further reduce your total cost of ownership (TCO).
+      - Investigate cost optimization tools. 
+        - imilar to cloud services brokerages, cost optimization tools find the best deal for each cloud workload. Many of these software tools can also perform functions like shutting down unused instances, rightsizing instances or moving to different payment options that can reduce costs further.
+      - Negotiate with vendors.
+        - Public cloud vendors offer upfront pricing, but that doesn't mean you have to pay the list price. Large enterprises with an abundance of workloads to move to the cloud may be able to get a better deal by contacting the cloud providers directly.
+    - Design for reliability
+      - Do your due diligence.
+        - Before you sign up for a cloud service, make sure you understand your service level agreement, including any promised levels of uptime and how the vendor will compensate you if it fails to live up to that agreement. Also, be aware that some providers charge different prices for different levels of availability. Make sure you choose the tier that best meets the needs of each particular workload.
+      - Plan for disaster recovery and business continuity (DR/BC).
+        - A multicloud strategy can be an integral part of your DR/BC plans because it gives you the option of moving workloads from one data center and vendor to another in the case of an emergency. However, organizations need to make sure that their DR/BC plans cover all their cloud vendors and that they have tested their plans before a disaster happens.
+      - Don't forget about backup and archive.
+        - Your cloud-based data and applications need to be backed up, too. Many security experts say it's a good idea for organizations to use a different cloud vendor for backup and primary systems.
+      - Consider geography when choosing vendors and data centers.
+        - A multicloud approach won't help with availability if all your vendors are running your workloads in Virginia data centers when a hurricane strikes Virginia. Organizations need to find a balance: Nearby data centers can provide lower latency and better performance, but geographically dispersed data centers offer lower risk in the case of a disaster.
+    - Ensure security and compliance
+      - Review relevant regulations.
+        - This year's adoption of the European Union's General Data Protection Regulation (GDPR) has encouraged many enterprises to revisit their compliance. Your organization needs to be aware of any laws or industry mandates that govern your data and ensure that any vendors you use can meet your regulatory needs.
+      - Control access to data and applications.
+        - When using multiple cloud vendors, ensuring that only the right people can access sensitive data becomes more challenging. Many enterprises choose to use an identity and access management (IAM) solution to make this problem more manageable.
+      - Encrypt data.
+        - No matter how secure your systems are or what kind of defensive measures your various cloud vendors have in place, you need to make sure that your data is encrypted both at rest and in transit. This is particularly important in a multicloud situation where workloads are moving from one cloud to another, because users sometimes forget about the need to encrypt data in motion.
+      - Deploy appropriate security measures.
+        - Your cybersecurity team needs to make sure that the other protections you have on your networks are adequate to protect a multicloud environment. Defending the perimeter is no longer enough when you are in a multicloud situation; you need to make sure that you have an agile defense and can detect and mitigate attacks in progress.
+      - Use a private cloud as necessary.
+        - For some data and applications, no public cloud will be adequate to meet your security and compliance needs. As a result, some organizations will always need to run a private cloud.
+    - Manage multiple providers
+      - Rely on automation and orchestration.
+        - Many of the automation tools used by DevOps teams also make life easier when dealing with multicloud architecture.
+      - Use containers.
+        - Having applications packaged with all their dependencies increases portability and can simplify management.
+      - Consider a cloud service broker.
+        - These tools and services can help you match workloads to the most appropriate cloud vendor.
+      - Invest in a multicloud management tool.
+        - Having a single pane of glass to manage all of your clouds can be invaluable in keeping costs under control, and tools that make use of artificial intelligence can be particularly helpful.
+      - Create an API management strategy.
+        - Multicloud architecture means dealing with many different APIs from different vendors; you'll need a plan for dealing with them.
+      - Keep integration in mind.
+        - When selecting vendors or creating new applications, you'll need to consider how you'll integrate data and applications residing in different clouds.
+      - Build your in-house team.
+        - You'll need IT pros with strong cloud computing skills to manage your multicloud architecture, so plan to build out your team over time.
+      - Reevaluate regularly.
+        - Just because a particular vendor was the best choice for a particular workload at one point in time doesn't mean that this will continue to be the case forever. Public cloud vendors are adding capabilities and changing prices all the time, so you'll need to revisit your decisions on a regular basis.
+    - Avoid complexity
+      - Start with an inventory.
+        - Before you can devise a plan to make multicloud environment more manageable, you need to know what workloads you have running and where.
+        - A discovery tool can help you create an inventory and possibly highlight applications and data that are good candidates for moving to the cloud.
+      - Deploy automation and orchestration tools.
+        - The same automation and orchestration tools that DevOps teams are implementing in order to speed application delivery and improve uptime can also help tame multicloud complexity.
+        - While these tools carry some expense, the time they can save generally makes them very worthwhile from a cost perspective.
+      - Consider a multicloud management tool.
+        - Depending on how complicated multicloud environment is, you might also want to consider a multicloud management tool.
+        - These products are designed specifically for multicloud, and thus often do a better job than traditional IT management tools.
+      - Control growth.
+        - Whether you use a multicloud management tool or not, you need to make sure that you have policies, procedures and (preferably) software in place to prevent employees from spinning up new cloud instances as they see fit.
+        - This kind of shadow IT can dramatically increase cloud costs while exposing the company to unnecessary risk.
+    - Consider integration needs
+      - API management strategy.
+        - Using multiple cloud vendors means relying on a host of different APIs.
+        - Make sure you have a plan for keeping track of those tools and managing their use.
+      - Carefully select data and application integration tools.
+        - In a multicloud environment you will almost certainly need some middleware to get applications to work together and get data where it needs to be in the proper format.
+        - There are a host of different data integration tools on the market, so you'll need to do your homework to find the best fit for your needs.
+    - Build in-house team
+      - Hire experienced people.
+        - When you can, you should hire people who have previously worked in multicloud environments.
+      - Train existing staff.
+  - Round‑robin load balancing
+    - is one of the simplest methods for distributing client requests across a group of servers.
+    - Going down the list of servers in the group, the round‑robin load balancer forwards a client request to each server in turn.
+    - When it reaches the end of the list, the load balancer loops back and goes down the list again (sends the next request to the first listed server, the one after that to the second server, and so on).
+    - The main benefit of round‑robin load balancing is that it is extremely simple to implement.
+    - However, it does not always result in the most accurate or efficient distribution of traffic, because many round‑robin load balancers assume that all servers are the same: currently up, currently handling the same load, and with the same storage and computing capacity.
+    - The following variants to the round‑robin algorithm take additional factors into account and can result in better load balancing:
+    - Weighted round robin
+      - A weight is assigned to each server based on criteria chosen by the site administrator; the most commonly used criterion is the server’s traffic‑handling capacity.
+      - The higher the weight, the larger the proportion of client requests the server receives. If, for example, server A is assigned a weight of 3 and server B a weight of 1, the load balancer forwards 3 requests to server A for each 1 it sends to server B.
+    - Dynamic round robin
+      - A weight is assigned to each server dynamically, based on real‑time data about the server’s current load and idle capacity.
+  - Cloud Security Software and Services
+    - The following are some of the cloud security software and service options businesses should consider:
+    - IaaS or PaaS cloud security options – these are add-on services that provide enterprises with more extensive security options than are available with basic cloud options.
+    - Identity and Access Management (IAM) – these tools ensure that only authorized parties have access to data and computing resources.
+    - Physical security – IaaS/PaaS providers should have physical security  – locked door, checkpoints – in addition to digital security to ensure their IT assets remain secure.
+    - Encryption – encrypts data at rest and in motion.
+    - Penetration testing – outside consultants are hired as “white hats” to break into a company’s system with the goal of identifying weaknesses.
+    - Compliance controls – ensure adherence to HIPPA, GDPR, etc.

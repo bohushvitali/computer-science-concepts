@@ -1,13 +1,13 @@
 var Context = function(input) {
   this.input = input;
   this.output = 0;
-}
+};
 
 Context.prototype = {
   startsWith: function(str) {
     return this.input.substr(0, str.length) === str;
   }
-}
+};
 
 var Expression = function(name, one, four, five, nine, multiplier) {
   this.name = name;
@@ -16,34 +16,31 @@ var Expression = function(name, one, four, five, nine, multiplier) {
   this.five = five;
   this.nine = nine;
   this.multiplier = multiplier;
-}
+};
 
 Expression.prototype = {
   interpret: function(context) {
     if (context.input.length == 0) {
       return;
-    }
-    else if (context.startsWith(this.nine)) {
-      context.output += (9 * this.multiplier);
+    } else if (context.startsWith(this.nine)) {
+      context.output += 9 * this.multiplier;
       context.input = context.input.substr(2);
-    }
-    else if (context.startsWith(this.four)) {
-      context.output += (4 * this.multiplier);
+    } else if (context.startsWith(this.four)) {
+      context.output += 4 * this.multiplier;
       context.input = context.input.substr(2);
-    }
-    else if (context.startsWith(this.five)) {
-      context.output += (5 * this.multiplier);
+    } else if (context.startsWith(this.five)) {
+      context.output += 5 * this.multiplier;
       context.input = context.input.substr(1);
     }
     while (context.startsWith(this.one)) {
-      context.output += (1 * this.multiplier);
+      context.output += 1 * this.multiplier;
       context.input = context.input.substr(1);
     }
   }
-}
+};
 
 function run() {
-  var roman = "MCMXXVIII"
+  var roman = "MCMXXVIII";
   var context = new Context(roman);
   var tree = [];
 

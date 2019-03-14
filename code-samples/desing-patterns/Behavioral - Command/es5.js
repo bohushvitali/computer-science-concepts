@@ -1,13 +1,21 @@
-function add(x, y) { return x + y; }
-function sub(x, y) { return x - y; }
-function mul(x, y) { return x * y; }
-function div(x, y) { return x / y; }
+function add(x, y) {
+  return x + y;
+}
+function sub(x, y) {
+  return x - y;
+}
+function mul(x, y) {
+  return x * y;
+}
+function div(x, y) {
+  return x / y;
+}
 
 var Command = function(execute, undo, value) {
   this.execute = execute;
   this.undo = undo;
   this.value = value;
-}
+};
 
 var AddCommand = function(value) {
   return new Command(add, sub, value);
@@ -38,20 +46,20 @@ var Calculator = function() {
     execute: function(command) {
       current = command.execute(current, command.value);
       commands.push(command);
-      console.log(action(command) + ": " + command.value);
+      console.log(action(command) + ': ' + command.value);
     },
 
     undo: function() {
       var command = commands.pop();
       current = command.undo(current, command.value);
-      console.log("Undo " + action(command) + ": " + command.value);
+      console.log('Undo ' + action(command) + ': ' + command.value);
     },
 
     getCurrentValue: function() {
       return current;
     }
-  }
-}
+  };
+};
 
 function run() {
   var calculator = new Calculator();
@@ -68,7 +76,7 @@ function run() {
   calculator.undo();
   calculator.undo();
 
-  console.log("\nValue: " + calculator.getCurrentValue());
+  console.log('\nValue: ' + calculator.getCurrentValue());
 }
 
 run();

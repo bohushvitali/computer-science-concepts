@@ -1,7 +1,7 @@
 var Iterator = function(items) {
   this.index = 0;
   this.items = items;
-}
+};
 
 Iterator.prototype = {
   first: function() {
@@ -22,10 +22,10 @@ Iterator.prototype = {
       callback(item);
     }
   }
-}
+};
 
 function run() {
-  var items = ["one", 2, "circle", true, "Applepie"];
+  var items = ['one', 2, 'circle', true, 'Applepie'];
   var iter = new Iterator(items);
 
   // using for loop
@@ -33,7 +33,7 @@ function run() {
   for (var item = iter.first(); iter.hasNext(); item = iter.next()) {
     console.log(item);
   }
-  console.log("");
+  console.log('');
 
   // using Iterator's each method
 

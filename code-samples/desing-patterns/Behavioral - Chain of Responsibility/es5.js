@@ -1,7 +1,7 @@
 var Request = function(amount) {
   this.amount = amount;
   log.add("Requested: $" + amount + "\n");
-}
+};
 
 Request.prototype = {
   get: function(bill) {
@@ -10,12 +10,18 @@ Request.prototype = {
     log.add("Dispense " + count + " $" + bill + " bills");
     return this;
   }
-}
+};
 
 function run() {
   var request = new Request(378);
 
-  request.get(100).get(50).get(20).get(10).get(5).get(1);
+  request
+    .get(100)
+    .get(50)
+    .get(20)
+    .get(10)
+    .get(5)
+    .get(1);
 }
 
 run();

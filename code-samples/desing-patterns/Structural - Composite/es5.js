@@ -1,7 +1,7 @@
 var Node = function(name) {
   this.children = [];
   this.name = name;
-}
+};
 
 Node.prototype = {
   add: function(child) {
@@ -25,7 +25,7 @@ Node.prototype = {
   hasChildren: function() {
     return this.children.length > 0;
   }
-}
+};
 
 // recursively traverse a (sub)tree
 
@@ -39,7 +39,7 @@ function traverse(indent, node) {
 
 function run() {
   var tree = new Node("root");
-  var left = new Node("left")
+  var left = new Node("left");
   var right = new Node("right");
   var leftleft = new Node("leftleft");
   var leftright = new Node("leftright");
@@ -48,7 +48,7 @@ function run() {
 
   tree.add(left);
   tree.add(right);
-  tree.remove(right);  // note: remove
+  tree.remove(right); // note: remove
   tree.add(right);
 
   left.add(leftleft);
