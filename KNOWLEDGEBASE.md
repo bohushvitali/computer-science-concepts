@@ -2155,6 +2155,38 @@
     - Yarn
       - Yarn is a package manager made by Facebook.
       - It can be used as an alternative to the npm package manager and is compatible with the public NPM registry.
+    - Apache Kafka
+      - Is a fast, horizontally scalable, fault-tolerant, message queue service.
+      - Is used for building real-time data pipelines and streaming apps.
+      - Distributed Streaming Platform
+        - Publish Stubscribe to stream of events
+        - Store Events in durable way
+        - Process stream of events as thay occur
+      - Terms
+        - Kafka cluster
+        - Brocker
+        - Topic
+        - Partition
+        - Replicas
+          - Leader
+          - Follower
+        - Producer
+        - Consumer Group
+          - Customer
+      - The project aims to provide a unified, high-throughput, low-latency platform for handling real-time data feeds.
+      - Its storage layer is essentially a “massively scalable pub/sub message queue designed as a distributed transaction log”
+    - Kubernetes
+      - Terms
+        - Statefull set
+          - Sticky identifyer for each pod
+      - Is an open-source container-orchestration system for automating deployment, scaling and. management of containerized applications.
+      - It aims to provide a “platform for automating deployment, scaling, and operations of application containers across clusters of hosts”.
+    - Event Streaming Application
+      - Building blocks
+        - Event Sources
+        - Stream Processing
+        - Event Archive
+        - Notifications
   - Agile Manifesto
     - Values
       - Individuals and Interactions Over Processes and Tools
@@ -2412,66 +2444,37 @@
       - Combined with robust automation, they allow engineers to make high-impact changes frequently and predictably with minimal toil.
       - The Cloud Native Computing Foundation seeks to drive adoption of this paradigm by fostering and sustaining an ecosystem of open source, vendorneutral projects.
     - Patterns
-    
-    1. CONTAINERIZATION
-          - Commonly done with Docker containers
-          - Any size application and dependencies (even PDP-11
- code running on an emulator) can be containerized
-          - Over time, you should aspire towards splitting suitable
- applications and writing future functionality as microservices
-2. CI/CD
-          - Setup Continuous Integration/Continuous Delivery
- (CI/CD) so that changes to your source code
- automatically result in a new container being
- built, tested, and deployed to staging and
- eventually, perhaps, to production
-          - Setup automated rollouts, roll backs and testing
-3. ORCHESTRATION &
-APPLICATION DEFINITION
-          - Kubernetes is the market-leading orchestration solution
-          - You should select a Certified Kubernetes Distribution,
- Hosted Platform, or Installer: cncf.io/ck
-          - Helm Charts help you define, install, and upgrade
- even the most complex Kubernetes application
-4. OBSERVABILITY & ANALYSIS
-          - Pick solutions for monitoring, logging and tracing
-          - Consider CNCF projects Prometheus for monitoring,
- Fluentd for logging and Jaeger for Tracing
-          - For tracing, look for an OpenTracing-compatible
- implementation like Jaeger
-5. SERVICE PROXY, DISCOVERY, & MESH
-          - CoreDNS is a fast and flexible tool that
- is useful for service discovery
-          - Envoy and Linkerd each enable service
- mesh architectures
-          - They offer health checking, routing,
- and load balancing
-7. DISTRIBUTED DATABASE & STORAGE
-When you need more resiliency and scalability than
-you can get from a single database, Vitess is a good
-option for running MySQL at scale through sharding.
-Rook is a storage orchestrator that integrates a
-diverse set of storage solutions into Kubernetes.
-Serving as the "brain" of Kubernetes, etcd provides a
-reliable way to store data across a cluster of machines.
-9. CONTAINER REGISTRY & RUNTIME
-Harbor is a registry that stores, signs, and scans content.
-You can use alternative container runtimes. The most common,
-all of which are OCI-compliant, are containerd, rkt and CRI-O. 
-8. STREAMING & MESSAGING
-When you need higher performance than JSON-REST, consider
-using gRPC or NATS. gRPC is a universal RPC framework. NATS is
-a multi-modal messaging system that includes request/reply,
-pub/sub and load balanced queues.
-6. NETWORKING
-To enable more flexible networking,
-use a CNI-compliant network project
-like Calico, Flannel, or Weave Net.
-10. SOFTWARE DISTRIBUTION
-If you need to do secure software distribution,
-evaluate Notary, an implementation of The
-Update Framework.
-
+      - CONTAINERIZATION
+        - Commonly done with Docker containers
+        - Any size application and dependencies (even PDP-11 code running on an emulator) can be containerized
+        - Over time, you should aspire towards splitting suitable applications and writing future functionality as microservices
+      - CI/CD
+        - Setup Continuous Integration/Continuous Delivery (CI/CD) so that changes to your source code automatically result in a new container being built, tested, and deployed to staging and eventually, perhaps, to production
+        - Setup automated rollouts, roll backs and testing
+      - ORCHESTRATION & APPLICATION DEFINITION
+        - Kubernetes is the market-leading orchestration solution
+        - You should select a Certified Kubernetes Distribution, Hosted Platform, or Installer: cncf.io/ck
+        - Helm Charts help you define, install, and upgrade even the most complex Kubernetes application
+      - OBSERVABILITY & ANALYSIS
+        - Pick solutions for monitoring, logging and tracing
+        - Consider CNCF projects Prometheus for monitoring, Fluentd for logging and Jaeger for Tracing
+        - For tracing, look for an OpenTracing-compatible implementation like Jaeger
+      - SERVICE PROXY, DISCOVERY, & MESH
+        - CoreDNS is a fast and flexible tool that is useful for service discovery
+        - Envoy and Linkerd each enable service mesh architectures
+        - They offer health checking, routing, and load balancing
+      - DISTRIBUTED DATABASE & STORAGE
+        - When you need more resiliency and scalability than you can get from a single database, Vitess is a good option for running MySQL at scale through sharding.
+        - Rook is a storage orchestrator that integrates a diverse set of storage solutions into Kubernetes.
+        - Serving as the "brain" of Kubernetes, etcd provides a reliable way to store data across a cluster of machines.
+      - CONTAINER REGISTRY & RUNTIME
+        - Harbor is a registry that stores, signs, and scans content. You can use alternative container runtimes. The most common, all of which are OCI-compliant, are containerd, rkt and CRI-O.
+      - STREAMING & MESSAGING
+        - When you need higher performance than JSON-REST, consider using gRPC or NATS. gRPC is a universal RPC framework. NATS is a multi-modal messaging system that includes request/reply, pub/sub and load balanced queues.
+      - NETWORKING
+        - To enable more flexible networking, use a CNI-compliant network project like Calico, Flannel, or Weave Net.
+      - SOFTWARE DISTRIBUTION
+        - If you need to do secure software distribution, evaluate Notary, an implementation of The Update Framework
   - Blockchain Landscape
     - Bitcoin
       - The Bitcoin protocol allows users to exchange of the Bitcoin (BTC) cryptocurrency without any trusted third party using the decentralized, peer-to-peer Bitcoin network.
